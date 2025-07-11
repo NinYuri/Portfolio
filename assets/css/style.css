@@ -5,7 +5,8 @@
     --vintageWine: #3F1521;
     --jetStream: #EAE3DB;
     --mochaEarth: #493e3c;
-    --vanillaCream: rgba(212, 192, 149, 0.8);
+    --vanillaCream: rgba(212, 192, 149, 0.3);
+    --vanillaCreamHover: rgba(212, 192, 149, 0.6);
     --vanCream: #D4C095;
     --black: #000000;
 
@@ -37,6 +38,12 @@ body {
     font-family: var(--spaceMono);
 }
 
+::-webkit-scrollbar { width: 5px; }
+
+::-webkit-scrollbar-track { background-color: transparent; }
+
+::-webkit-scrollbar-thumb { background-color: var(--vintageWine); }
+
 /* ================== REUSABLE ================== */
 .button {
     position: relative;
@@ -62,7 +69,7 @@ body {
     width: 20px;
     height: 20px;
     background-color: transparent;
-    background-image: url('../images/Stars.png');
+    background-image: url('../images/Stars.webp');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -94,14 +101,17 @@ body {
     justify-content: center;
     height: 90px;
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0;
     background: var(--vintageWine);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
+    transition: top 0.3s ease;
     z-index: 999;
 }
+
+.navbar.hide { top: -90px; }
 
 .navbar-container {
     position: relative;
@@ -111,7 +121,7 @@ body {
     width: 100%;
     height: 100%;
     padding: 0 2rem;
-    max-width: 1600px;
+    max-width: 1920px;
 }
 
 .navbar-logo {
@@ -173,7 +183,7 @@ body {
     width: 20px;
     height: 20px;
     background-color: transparent;
-    background-image: url('../images/Stars.png');
+    background-image: url('../images/Stars.webp');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -241,23 +251,24 @@ body {
 /* ================== HEADER ================== */
 header {
     background-color: var(--vintageWine);
-    background-image: url('../images/Or_pattern.png');
+    background-image: url('../images/PatternOrg.webp');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
-    min-height: 100vh;
+    max-height: 100vh;
     width: 100%;
 }
 
 .home-container {
     width: 100%;
-    min-height: calc(100vh - 90px);
+    height: 100vh;
     display: flex;
     align-items: center;
     padding: 0 7rem;
 }
 
 .home-design {
+    margin-top: 5rem;
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -267,20 +278,21 @@ header {
 
 .home-design .home-name h1 {
     font-family: var(--monsieur);
-    font-size: 15rem;
+    font-size: 13rem;
     font-weight: lighter;
 }
 
 .home-design .home-name h3 {
-    font-size: 6rem;
+    font-size: 5rem;
     color: var(--vanCream);
     -webkit-text-stroke: 0.1rem var(--mochaEarth);
-    margin: -1.3em 0 0 2.6em;
+    margin: -1.3em 0 0 3em;
 }
 
 .home-design .home-info { padding: 2.3em 0; }
 
-.home-design .home-info p { font-size: 1.2rem; }
+.home-design .home-info p { font-size: 1.1rem; }
+
 
 /* ================== ABOUT ME ================== */
 .aboutMe {
@@ -288,9 +300,88 @@ header {
     height: 100vh;
     background-color: var(--jetStream);
     overflow: hidden;
+    border-bottom: var(--vintageWine) 2px solid;
+}
+
+
+/* ================== PROJECTS ================== */
+.projects {
+    width: 100%;
+    background-color: var(--jetStream);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.description {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+    margin-bottom: 4em;
+}
+
+.description h1 {
+    font-size: 4rem;
+    color: var(--vintageWine);
+}
+
+.description p {
+    color: var(--mochaEarth);
+    font-size: 1.1rem;
+}
+
+.options-container .option {
+    width: 9.8em;
+    height: 3em;
+    color: var(--black);
+    font-family: var(--spaceMono);
+    font-size: 1rem;
+    font-weight: lighter;
+    border-radius: 20px;
+    background-color: var(--vanillaCream);
+    border: none;
+    padding: 6px 20px;
+    margin-bottom: 1em;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.options-container .option:hover { background-color: var(--vanillaCreamHover); }
+
+.options-container .option.active {
+    color: var(--jetStream);
+    background-color: var(--vintageWine);
+}
+
+.projects-container.active {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.projects-container { display: none; }
+
+.project { 
+    background-color: pink; 
+    border-radius: 20px;
+    color: var(--mochaEarth);
+    font-size: 1rem;
+}
+
+.project img { 
+    width: 100%; 
+    height: 100%;
+    border-radius: 20px;
 }
 
 /* ================== RESPONSIVE ================== */
+
 @media (max-width: 880px) {
     /* ================== NAVBAR ================== */
     .navbar-container .navbar-menu {
@@ -323,7 +414,13 @@ header {
     .navbar-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
     /* ================== HEADER ================== */
-    .home-design { width: 90%; }
+    header { background-image: url('../images/PatternMin.webp'); }
+
+    .home-design {
+        width: 100%;
+        margin-top: 0; 
+        align-items: center;
+    }
 
     .home-design .home-name { 
         padding: 0 3rem; 
@@ -347,7 +444,12 @@ header {
     }
 
     /* ================== HEADER ================== */
-    .home-container { padding: 0; }
+    header { background-image: url('../images/PatternMin.webp'); }
+
+    .home-container { 
+        padding: 0; 
+        margin-top: 0px;
+    }
 
     .home-design { 
         width: 100%; 
@@ -372,4 +474,67 @@ header {
         height: 3em;
         font-size: 0.9rem;
     }
+}
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+    /* ================== HEADER ================== */
+    header { background-image: none; }
+
+    .home-container { padding: 0; }
+
+    .home-design { 
+        width: 100%; 
+        align-items: center;
+    }
+
+    .home-design .home-name { 
+        padding: 0; 
+        text-align: center;
+    }
+
+    .home-design .home-info { 
+        display: flex;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1366px) {
+    /* ================== HEADER ================== */
+    header { 
+        background-image: url('../images/PatternMax.webp'); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+}
+
+@media (min-width: 1520px) {
+    /* ================== HEADER ================== */
+    header { background-image: url('../images/PatternMax.webp'); }
+}
+
+@media (min-width: 1920px) {
+    /* ================== REUSABLE ================== */
+    .button { font-size: 1.5rem; }
+
+    /* ================== NAVBAR ================== */
+    .navbar { height: 110px;}
+
+    .navbar.hide { top: -110px; }
+
+    .navbar-container { padding: 0 5rem; }
+
+    .navbar-container .navbar-menu li a { font-size: 1.3rem; }
+
+    /* ================== HEADER ================== */
+    .home-design .home-name h1 { font-size: 17rem; }
+
+    .home-design .home-name h3 {
+        font-size: 7rem;
+        margin: -1.3em 0 0 2.6em;
+    }
+
+    .home-design .home-info { padding-right: 2em; }
+
+    .home-design .home-info p { font-size: 1.5rem; }
 }
