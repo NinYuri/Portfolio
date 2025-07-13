@@ -18,6 +18,8 @@
     --spaceMono: 'Space Mono', monospace;
 }
 
+html { scroll-behavior: smooth; }
+
 * {
     margin: 0;
     padding: 0;
@@ -120,7 +122,7 @@ body {
 .modal-container {
     position: relative;
     width: 40%;
-    height: 85%;
+    height: 87%;
     margin: auto;
     background-color: var(--jetStream);
     box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
@@ -156,14 +158,58 @@ body {
     z-index: 1;
 }
 
+.modal-img { 
+    display: flex;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
 .modal-container img {
+    flex: 0 0 100%;
     width: 100%;
-    border-radius: 8px 8px 0 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.modal-slider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0.5em 0 0.7em 0;
+}
+
+.modal-slider a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.modal-slider i {
+    color: var(--vintageWine);
+    font-size: 1.1rem;
+}
+
+.modal-slider .img-slider {
+    width: 0.5em;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--vanCream);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.modal-slider .img-slider.active {
+    opacity: 1;
+    background-color: var(--vintageWine);
 }
 
 .modal-content { 
     color: var(--vintageWine); 
-    padding: 1em 2em;
+    padding: 0 2em 0.5em 2em;
 }
 
 .modal-content h3 { font-size: 2rem; }
@@ -201,28 +247,37 @@ body {
     left: 0.6em;
     height: 75%;
     width: 23%;
+    border-radius: 0;
 }
 
 .technologies .tech .css { width: 27%; }
 
-.technologies .tech .js { 
-    top: 0.23em;
-    width: 17%;
-}
-
-.technologies .tech .ts { 
+.technologies .tech .javascript,
+.technologies .tech .typescript { 
     top: 0.25em;
     height: 68%;
     width: 16%; 
 }
 
-.technologies .tech .node { width: 19%; }
+.technologies .tech img[class="node.js"] { width: 19%; }
 
 .technologies .tech .docker { width: 21%; }
 
-.technologies .tech .postgre { 
+.technologies .tech .postgresql { 
     left: 0.4em;
+    width: 18%; 
+}
+
+.technologies .tech .puppeteer {
+    top: 0.23em;
+    width: 17%;
+}
+
+.technologies .tech .exceljs { 
+    top: 0.28em;
+    left: 0.5em;
     width: 20%; 
+    height: 67%;
 }
 
 /* ================== NAVBAR ================== */

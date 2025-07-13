@@ -33,17 +33,17 @@
                     <span class="bar"></span>
                 </button>
                 <ul class="navbar-menu">
-                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Skills</a></li>
-                    <li><a href="#">Projects</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li class="contact"><a href="#">Contact</a></li>
                 </ul>
             </div>
         </nav>
 
         <!-- ======================== HOME ======================== -->
-        <div class="home-container">
+        <div class="home-container" id="home">
             <div class="home-design">
                 <div class="home-name">
                     <h1>Yuriana</h1>
@@ -56,7 +56,7 @@
                         digital experiences that blend functionality with creativity.</p>
                 </div>
 
-                <button class="button">View Projects</button>
+                <button class="button view-projects">View Projects</button>
             </div>
 
         </div>
@@ -68,7 +68,7 @@
     </div>
 
     <!-- ======================== PROJECTS ======================== -->
-    <div class="projects">
+    <div class="projects" id="projects">
         <div class="description">
             <h1>PROJECTS</h1>
             <p>Here’s a glimpse into the projects that reflect my journey — each one a small universe of 
@@ -77,14 +77,13 @@
         </div>
 
         <div class="options-container">
-            <button class="option active">All</button>
-            <button class="option">Web Pages</button>
+            <button class="option active">Web Pages</button>
             <button class="option">Web Designs</button>
             <button class="option">Unity Games</button>
             <button class="option">Java Apps</button>
         </div>
 
-        <div class="projects-container active all">
+        <div class="projects-container active web">
             <div class="project">
                 <div class="border"></div>
                 <img src="./assets/images/Prenacional.webp" alt="Prenacional">
@@ -96,9 +95,8 @@
                     </div>                    
 
                     <div class="project-buttons">
-                        <button class="project-option about"><i class="fa-solid fa-circle-info"></i>About</button>
-                        <button class="project-option code"><i class="fa-brands fa-github"></i>View Code</button>
-                        <button class="project-option demo"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live Demo</button>
+                        <button class="project-option about" data-project="prenacional"><i class="fa-solid fa-circle-info"></i>About</button>
+                        <button class="project-option code" data-project="prenacional"><i class="fa-brands fa-github"></i>View Code</button>
                     </div>
                 </div>
             </div>
@@ -114,9 +112,9 @@
                     </div>                    
 
                     <div class="project-buttons">
-                        <button class="project-option about"><i class="fa-solid fa-circle-info"></i>About</button>
-                        <button class="project-option code"><i class="fa-brands fa-github"></i>View Code</button>
-                        <button class="project-option demo"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live Demo</button>
+                        <button class="project-option about" data-project="bibliopass"><i class="fa-solid fa-circle-info"></i>About</button>
+                        <button class="project-option code" data-project="bibliopass" data-type="frontend"><i class="fa-brands fa-github"></i>Front Code</button>
+                        <button class="project-option code" data-project="bibliopass" data-type="backend"><i class="fa-brands fa-github"></i>Back Code</button>
                     </div>
                 </div>
             </div>
@@ -128,85 +126,51 @@
                 <div class="content-project">
                     <div class="project-title">
                         <h5>CASA MIA</h5>
-                        <p></p>
+                        <p>RESTAURANT WEB DESIGN</p>
                     </div>                    
 
                     <div class="project-buttons">
-                        <button class="project-option about"><i class="fa-solid fa-circle-info"></i>About</button>
-                        <button class="project-option code"><i class="fa-brands fa-github"></i>View Code</button>
-                        <button class="project-option demo"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live Demo</button>
+                        <button class="project-option about" data-project="casamia"><i class="fa-solid fa-circle-info"></i>About</button>
+                        <button class="project-option code" data-project="casamia"><i class="fa-brands fa-github"></i>View Code</button>
+                        <button class="project-option demo" data-project="casamia"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live Demo</button>
                     </div>
                 </div>
             </div>
 
             <div class="project">
+                <div class="border"></div>
                 <img src="./assets/images/Stay_Fashion.webp" alt="Stay Fashion">
-            </div>   
 
-            <div class="project">
-                <img src="./assets/images/Cinema.webp" alt="Cinema">
-            </div>
+                <div class="content-project">
+                    <div class="project-title">
+                        <h5>STAY FASHION</h5>
+                        <p></p>
+                    </div>
 
-            <div class="project">
-                <img src="./assets/images/Turismo.webp" alt="Turismo">
-            </div>
-
-            <div class="project">
-                <img src="./assets/images/Cafendi.webp" alt="Cafendi">
-            </div>
-
-            <div class="project">
-                <img src="./assets/images/Natacion.webp" alt="Natacion">
-            </div>
-
-            <div class="project">
-                <img src="./assets/images/Contador.webp" alt="Contador">
-            </div>
-
-            <div class="project">
-                <img src="./assets/images/Tanks.webp" alt="Tanks">
-            </div>
-
-            <div class="project">
-                <img src="./assets/images/Galaga.webp" alt="Galaga">
-            </div>
-
-            <div class="project">
-                <img src="./assets/images/Solfran.webp" alt="Solfran">
-            </div>
-
-            <div class="project">
-                <img src="./assets/images/Netbeans.webp" alt="Estetica">
-            </div>
-
-            <div class="project">
-                <img src="./assets/images/CompiladorLR.webp" alt="CompiladorLR">
-            </div>
-
-            <div class="project">
-                <img src="./assets/images/CompiladorLL.webp" alt="CompiladorLL">
-            </div>
-        </div>
-
-        <div class="projects-container web">
-            <div class="project">
-                <img src="./assets/images/Prenacional.webp" alt="Prenacional">
-            </div>
-
-            <div class="project">
-                <img src="./assets/images/QR.webp" alt="QR Code">
-            </div>
-
-            <div class="project">
-                <img src="./assets/images/Restaurant.webp" alt="Restaurant">
-            </div>
-
-            <div class="project">
-                <img src="./assets/images/Stay_Fashion.webp" alt="Stay Fashion">
+                    <div class="project-buttons">
+                        <button class="project-option about" data-project="stayfashion"><i class="fa-solid fa-circle-info"></i>About</button>
+                        <button class="project-option code" data-project="stayfashion"><i class="fa-brands fa-github"></i>View Code</button>
+                        <button class="project-option demo" data-project="stayfashion"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live Demo</button>
+                    </div>
+                </div>
             </div>            
 
             <div class="project">
+                <div class="border"></div>
                 <img src="./assets/images/Cinema.webp" alt="Cinema">
+
+                <div class="content-project">
+                    <div class="project-title">
+                        <h5>CINEMA</h5>
+                        <p></p>
+                    </div>
+
+                    <div class="project-buttons">
+                        <button class="project-option about" data-project="cinema"><i class="fa-solid fa-circle-info"></i>About</button>
+                        <button class="project-option code" data-project="cinema"><i class="fa-brands fa-github"></i>View Code</button>
+                        <button class="project-option demo" data-project="cinema"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live Demo</button>
+                    </div>
+                </div>
             </div>
 
             <div class="project">
@@ -261,25 +225,19 @@
     <div class="modal">
         <div class="modal-container">
             <label for="btn-modal"><i class="fa-solid fa-circle-xmark"></i><div class="close-back"></div></label>
-            <img src="./assets/images/Prenacional.webp" alt="Prenacional">
+            
+            <div class="modal-img">
+            </div>
+
+            <div class="modal-slider">             
+            </div>
             
             <div class="modal-content">    
-                <h3>PRENATIONAL SPORTS EVENT</h3>
-                <p>As lead developer in a team of three, I handled the full development cycle—from frontend design 
-                    to backend logic and database integration—delivering a sleek, user-friendly experience for both 
-                    attendees and organizers.</p>
+                <h3></h3>
+                <p></p>                
                 
                 <h4>Technologies</h4>
-                <div class="technologies">                    
-                    <button class="tech"><img class="html" src="./assets/images/HTML.png" alt="HTML"></img>HTML</button>
-                    <button class="tech"><img class="css" src="./assets/images/CSS.png" alt="CSS">CSS</button>
-                    <button class="tech"><img class="js" src="./assets/images/JS.png" alt="JS">JavaScript</button>
-                    <button class="tech"><img class="ts" src="./assets/images/TS.png" alt="TS">TypeScript</button>
-                    <button class="tech"><img class="node" src="./assets/images/Node.png" alt="Node">Node.js</button>                    
-                    <button class="tech"><img class="prisma" src="./assets/images/Prisma.png" alt="Prisma">Prisma</button>
-                    <button class="tech"><img class="docker" src="./assets/images/Docker.png" alt="Docker">Docker</button>
-                    <button class="tech"><img class="postgre" src="./assets/images/Postgre.png" alt="Postgre">PostgreSQL</button>
-                    
+                <div class="technologies">
                 </div>
             </div>
         </div>
