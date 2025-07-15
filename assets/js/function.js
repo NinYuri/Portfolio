@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    scrollSpy();
     navButtons();
     navScroll();
     projectsBtn();
@@ -88,15 +89,192 @@ const projectData = {
         technologies: [
             "HTML",
             "CSS",
-            "JavaScript"
+            "JavaScript",
+            "SweetAlert"
         ],
         github: "https://github.com/NinYuri/StayFashion.git",
         demo: "https://ninyuri.github.io/StayFashion/"
     },
     cinema: {
+        title: "CINEMA",
+        description: "",
+        images: [
+            "./assets/images/Cinema.webp"
+        ],
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "TypeScript",
+            "Node.js",
+            "Prisma"
+        ],
+        github: {
+            frontend: "https://github.com/Nest-Microservice-7mo/Cine_frontend.git",
+            backend: "https://github.com/Nest-Microservice-7mo/Cine_microservice.git"
+        }
+    },
+    tourism: {
+        title: "TOURISM",
+        description: "",
+        images: [
+            "./assets/images/Turismo.webp"
+        ],
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "SweetAlert",
+            "API",
+            "Python",
+            "Numpy",
+            "Keras"
+        ],
+        github: "https://github.com/NinYuri/Turismo_ML.git"
+    },
+    cafendi: {
+        title: "CAFENDI",
+        description: "",
+        images: [
+            "./assets/images/Cafendi.webp",
+            "./assets/images/Cafendi1.webp",
+            "./assets/images/Cafendi2.webp",
+            "./assets/images/Cafendi3.webp",
+            "./assets/images/Cafendi4.webp"
+        ],
+        technologies: [
+            "Figma"
+        ],
+        github: "https://www.figma.com/proto/2x54qr0EZsmKqRczeUL8fF/Coffe-Shop?node-id=1066-2&starting-point-node-id=1066%3A2&scaling=scale-down-width&content-scaling=fixed&t=fg8e3HHhptMGCcQu-1"
+    },
+    swim: {
+        title: "OGREN",
+        description: "",
+        images: [
+            "./assets/images/Natacion.webp",
+            "./assets/images/Swim1.webp",
+            "./assets/images/Swim2.webp",
+            "./assets/images/Swim3.webp",
+            "./assets/images/Swim4.webp",
+            "./assets/images/Swim5.webp",
+            "./assets/images/Swim6.webp"
+        ],
+        technologies: [
+            "Figma"
+        ],
+        github: "https://www.figma.com/proto/xWQSHQs4Bxhi0p8MRLMSDM/Escuela-de-Nataci%C3%B3n?node-id=12-27&starting-point-node-id=12%3A27&scaling=scale-down-width&content-scaling=fixed&t=z4t97BerVPPv9Sfw-1"
+    },
+    accounting: {
+        title: "ACCOUNTING",
+        description: "",
+        images: [
+            "./assets/images/Contador.webp",
+            "./assets/images/Cont1.webp",
+            "./assets/images/Cont2.webp"
+        ],
+        technologies: [
+            "Figma"
+        ],
+        github: "https://www.figma.com/proto/R8o81db3Pxa1JMwu2gBOpy/Contadur%C3%ADa?node-id=275-24&starting-point-node-id=275%3A24&t=kMvbpnMIuCFmphQC-1"
+    },
+    tanks: {
+        title: "TANK BATTLE",
+        description: "",
+        images: [
 
+        ],
+        technologies: [
+            "Unity",
+            "C"
+        ]
+    },
+    galaga: {
+        title: "GALAGA",
+        description: "A fast-paced arcade-style shooter inspired by Galaga, where players must match their ship's color to falling stars. Hitting the wrong color — or missing any star — ends the game. Includes dynamic color changes and a switchable 3D perspective view for added challenge and depth.",
+        video: "",
+        technologies: [
+            "Unity",
+            "C"
+        ]
+    },
+    solfran: {
+        title: "",
+        description: "",
+        images: [
+
+        ],
+        technologies: [
+            "Java",
+            "MySQL",
+            "Git"
+        ],
+        github: "https://github.com/NinYuri/Lab_Solfran.git"
+    },
+    netbeans: {
+        title: "",
+        description: "",
+        images: [
+
+        ],
+        technologies: [
+            "Java",
+            "MySQL",
+            "Git"
+        ],
+        github: "https://github.com/NinYuri/TopicProject.git"
+    },
+    compLR: {
+        title: "",
+        description: "",
+        images: [
+
+        ],
+        technologies: [
+            "Java",
+            "ExcelJS",
+            "Lex"
+        ],
+        github: "https://github.com/NinYuri/Compilador.git"
+    },
+    compLL: {
+        title: "",
+        description: "",
+        images: [
+
+        ],
+        technologies: [
+            "Java",
+            "ExcelJS"
+        ],
+        github: ""
     }
 };
+
+/* ================================ SCROLLSPY ================================ */
+function scrollSpy() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar-menu a');
+
+    function activateMenuOnScroll() {
+        let scrollY = window.pageYOffset;
+
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 90;
+            const sectionId = current.getAttribute('id');
+
+            if(scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href') === `#${sectionId}`)
+                        link.classList.add('active');
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', activateMenuOnScroll);
+}
 
 /* ================================ NAVBAR ================================ */
 // BUTTONS
@@ -272,30 +450,43 @@ function fillModalContent(project) {
     imgContainer.innerHTML = '';
     sliderDots.innerHTML = '';
 
-    sliderDots.innerHTML = `
-        <a href="" id="prevBtn"><i class="fa-solid fa-angle-left"></i></a>
-    `;
+    if(project.video) {
+        // Video
+        const video = document.createElement('video');
+        video.src = project.video;
+        video.controls = true;
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.style.width = "100%";
 
-    project.images.forEach((src, index) => {
-        // Image
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = project.title;
-        img.id = `slide${index + 1}`;
-        imgContainer.appendChild(img);
+        imgContainer.appendChild(video);
+    } else {
+        sliderDots.innerHTML = `
+            <a href="" id="prevBtn"><i class="fa-solid fa-angle-left"></i></a>
+        `;
 
-        // Dots
-        const dot = document.createElement('a');
-        dot.href = "";
-        dot.className = 'img-slider' + (index === 0 ? ' active' : '');
-        dot.dataset.project = index + 1;
-        dot.dataset.target = `slide${index + 1}`;
-        sliderDots.appendChild(dot);
-    });
+        project.images.forEach((src, index) => {
+            // Image
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = project.title;
+            img.id = `slide${index + 1}`;
+            imgContainer.appendChild(img);
+
+            // Dots
+            const dot = document.createElement('a');
+            dot.href = "";
+            dot.className = 'img-slider' + (index === 0 ? ' active' : '');
+            dot.dataset.project = index + 1;
+            dot.dataset.target = `slide${index + 1}`;
+            sliderDots.appendChild(dot);
+        });
     
-    sliderDots.innerHTML += `
-        <a href="" id="nextBtn"><i class="fa-solid fa-angle-right"></i></a>
-    `;
+        sliderDots.innerHTML += `
+            <a href="" id="nextBtn"><i class="fa-solid fa-angle-right"></i></a>
+        `;
+    }
 
     // Technologies
     const techContainer = document.querySelector('.modal-content .technologies');
@@ -315,7 +506,8 @@ function fillModalContent(project) {
         techContainer.appendChild(btn);
     });
 
-    modalSlider();
+    if(!project.video)
+        modalSlider();
 }
 
 /* ========================= MODAL SLIDER ========================= */

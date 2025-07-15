@@ -19,6 +19,8 @@
 
     <!-- ============ ICONOS ============ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -34,7 +36,7 @@
                 </button>
                 <ul class="navbar-menu">
                     <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#aboutMe">About</a></li>
                     <li><a href="#">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li class="contact"><a href="#">Contact</a></li>
@@ -43,7 +45,7 @@
         </nav>
 
         <!-- ======================== HOME ======================== -->
-        <div class="home-container" id="home">
+        <section class="home-container" id="home">
             <div class="home-design">
                 <div class="home-name">
                     <h1>Yuriana</h1>
@@ -58,17 +60,16 @@
 
                 <button class="button view-projects">View Projects</button>
             </div>
-
-        </div>
+        </section>
     </header>
     
     <!-- ======================== ABOUT ME ======================== -->
-    <div class="aboutMe">
+    <section class="aboutMe" id="aboutMe">
 
-    </div>
+    </section>
 
     <!-- ======================== PROJECTS ======================== -->
-    <div class="projects" id="projects">
+    <section class="projects" id="projects">
         <div class="description">
             <h1>PROJECTS</h1>
             <p>Here’s a glimpse into the projects that reflect my journey — each one a small universe of 
@@ -167,59 +168,187 @@
 
                     <div class="project-buttons">
                         <button class="project-option about" data-project="cinema"><i class="fa-solid fa-circle-info"></i>About</button>
-                        <button class="project-option code" data-project="cinema"><i class="fa-brands fa-github"></i>View Code</button>
-                        <button class="project-option demo" data-project="cinema"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live Demo</button>
+                        <button class="project-option code" data-project="cinema" data-type="frontend"><i class="fa-brands fa-github"></i>Front Code</button>
+                        <button class="project-option code" data-project="cinema" data-type="backend"><i class="fa-brands fa-github"></i>Back Code</button>
                     </div>
                 </div>
             </div>
 
             <div class="project">
+                <div class="border"></div>
                 <img src="./assets/images/Turismo.webp" alt="Turismo">
+
+                <div class="content-project">
+                    <div class="project-title">
+                        <h5>TOURISM</h5>
+                        <p></p>
+                    </div>
+
+                    <div class="project-buttons">
+                        <button class="project-option about" data-project="tourism"><i class="fa-solid fa-circle-info"></i>About</button>
+                        <button class="project-option code" data-project="tourism"><i class="fa-brands fa-github"></i>View Code</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="projects-container design">
             <div class="project">
+                <div class="border"></div>
                 <img src="./assets/images/Cafendi.webp" alt="Cafendi">
+
+                <div class="content-project">
+                    <div class="project-title">
+                        <h5>CAFENDI</h5>
+                        <p></p>
+                    </div>
+
+                    <div class="project-buttons">
+                        <button class="project-option about" data-project="cafendi"><i class="fa-solid fa-circle-info"></i>About</button>
+                        <button class="project-option code" data-project="cafendi"><ion-icon name="logo-figma"></ion-icon>View Design</button>
+                    </div>
+                </div>
             </div>
 
             <div class="project">
+                <div class="border"></div>
                 <img src="./assets/images/Natacion.webp" alt="Natacion">
+
+                <div class="content-project">
+                    <div class="project-title">
+                        <h5>OGREN</h5>
+                        <p></p>
+                    </div>
+
+                    <div class="project-buttons">
+                        <button class="project-option about" data-project="swim"><i class="fa-solid fa-circle-info"></i>About</button>
+                        <button class="project-option code" data-project="swim"><ion-icon name="logo-figma"></ion-icon>View Design</button>
+                    </div>
+                </div>
             </div>
 
             <div class="project">
+                <div class="border"></div>
                 <img src="./assets/images/Contador.webp" alt="Contador">
+
+                <div class="content-project">
+                    <div class="project-title">
+                        <h5>ACCOUNTING</h5>
+                        <p></p>
+                    </div>
+
+                    <div class="project-buttons">
+                        <button class="project-option about" data-project="accounting"><i class="fa-solid fa-circle-info"></i>About</button>
+                        <button class="project-option code" data-project="accounting"><ion-icon name="logo-figma"></ion-icon>View Design</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="projects-container unity">
             <div class="project">
+                <div class="border"></div>
                 <img src="./assets/images/Tanks.webp" alt="Tanks">
+
+                <div class="content-project">
+                    <div class="project-title">
+                        <h5>TANK BATTLE</h5>
+                        <p></p>
+                    </div>
+
+                    <div class="project-buttons">
+                        <button class="project-option about" data-project="tanks"><i class="fa-solid fa-circle-info"></i>About</button>
+                    </div>
+                </div>
             </div>
 
             <div class="project">
+                <div class="border"></div>
                 <img src="./assets/images/Galaga.webp" alt="Galaga">
+
+                <div class="content-project">
+                    <div class="project-title">
+                        <h5>GALAGA</h5>
+                        <p>COLOR MATCH ARCADE</p>
+                    </div>
+
+                    <div class="project-buttons">
+                        <button class="project-option about" data-project="galaga"><i class="fa-solid fa-circle-info"></i>About</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="projects-container java">
             <div class="project">
+                <div class="border"></div>
                 <img src="./assets/images/Solfran.webp" alt="Solfran">
+
+                <div class="content-project">
+                    <div class="project-title">
+                        <h5>SOLFRAN LABORATORY</h5>
+                        <p></p>
+                    </div>
+
+                    <div class="project-buttons">
+                        <button class="project-option about" data-project="solfran"><i class="fa-solid fa-circle-info"></i>About</button>
+                        <button class="project-option code" data-project="solfran"><i class="fa-brands fa-github"></i>View Code</button>
+                    </div>
+                </div>
             </div>
 
             <div class="project">
+                <div class="border"></div>
                 <img src="./assets/images/Netbeans.webp" alt="Estetica">
+
+                <div class="content-project">
+                    <div class="project-title">
+                        <h5></h5>
+                        <p></p>
+                    </div>
+
+                    <div class="project-buttons">
+                        <button class="project-option about" data-project="netbeans"><i class="fa-solid fa-circle-info"></i>About</button>
+                        <button class="project-option code" data-project="netbeans"><i class="fa-brands fa-github"></i>View Code</button>
+                    </div>
+                </div>
             </div>
 
             <div class="project">
+                <div class="border"></div>
                 <img src="./assets/images/CompiladorLR.webp" alt="CompiladorLR">
+
+                <div class="content-project">
+                    <div class="project-title">
+                        <h5>LR COMPILER</h5>
+                        <p></p>
+                    </div>
+
+                    <div class="project-buttons">
+                        <button class="project-option about" data-project="compLR"><i class="fa-solid fa-circle-info"></i>About</button>
+                        <button class="project-option code" data-project="compLR"><i class="fa-brands fa-github"></i>View Code</button>
+                    </div>
+                </div>
             </div>
 
             <div class="project">
+                <div class="border"></div>
                 <img src="./assets/images/CompiladorLL.webp" alt="CompiladorLL">
+
+                <div class="content-project">
+                    <div class="project-title">
+                        <h5>LL COMPILER</h5>
+                        <p></p>
+                    </div>
+
+                    <div class="project-buttons">
+                        <button class="project-option about" data-project="compLL"><i class="fa-solid fa-circle-info"></i>About</button>
+                        <button class="project-option code" data-project="compLL"><i class="fa-brands fa-github"></i>View Code</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- ======================== MODAL ======================== -->
     <div class="modal">

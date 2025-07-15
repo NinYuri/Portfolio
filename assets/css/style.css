@@ -261,6 +261,8 @@ body {
 
 .technologies .tech img[class="node.js"] { width: 19%; }
 
+.technologies .tech .python,
+.technologies .tech .numpy,
 .technologies .tech .docker { width: 21%; }
 
 .technologies .tech .postgresql { 
@@ -268,9 +270,17 @@ body {
     width: 18%; 
 }
 
+.technologies .tech .figma,
 .technologies .tech .puppeteer {
     top: 0.23em;
     width: 17%;
+}
+
+.technologies .tech .sweetalert {
+    width: 17%;
+    height: 73%;
+    top: 0.27em;
+    left: 0.5em;
 }
 
 .technologies .tech .exceljs { 
@@ -278,6 +288,26 @@ body {
     left: 0.5em;
     width: 20%; 
     height: 67%;
+}
+
+.technologies .tech .git,
+.technologies .tech .api { 
+    width: 28%; 
+    height: 73%;
+    top: 0.27em;
+    left: 0.5em;
+}
+
+.technologies .tech .unity { 
+    height: 70%; 
+    left: 0.5em;
+}
+
+.technologies .tech .c { width: 31%; }
+
+.technologies .tech .mysql {
+    height: 72%;
+    top: 0.33em;
 }
 
 /* ================== NAVBAR ================== */
@@ -639,11 +669,15 @@ header {
 .project-option .fa-brands,
 .project-option .fa-solid { margin-right: 0.5em; }
 
+.project-option ion-icon { 
+    margin-right: 0.3em;
+    transform: translateY(0.1em);
+}
+
 .project-option .fa-arrow-up-right-from-square { 
     font-size: 0.8em; 
     margin-right: 0.7em;
 }
-
 
 /* ================== RESPONSIVE ================== */
 
