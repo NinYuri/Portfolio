@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ================================ PROJECT OBJECTS ================================ */
 const projectData = {
     prenacional: {
-        title: "PRENATIONAL SPORTS EVENT",
+        title: "PRENATIONAL",
         description: "An informative and user-friendly web platform designed to centralize details for the Prenational Sports Event hosted by the Instituto Tecnológico de Jiquilpan — including teams, venues, schedules, and results.",
         images: [
             "./assets/images/Prenacional.webp",
@@ -77,7 +77,7 @@ const projectData = {
     },
     stayfashion: {
         title: "STAY FASHION",
-        description: "",
+        description: "A static website designed for an elegant beauty studio, using warm colors and pastel pinks over a clean white base. It includes sections like Home, About Us, Services and Login — highlighting the salon's philosophy, stylists, and a visual catalog of treatments.",
         images: [
             "./assets/images/Stay_Fashion.webp",
             "./assets/images/SF1.webp",
@@ -97,9 +97,13 @@ const projectData = {
     },
     cinema: {
         title: "CINEMA",
-        description: "",
+        description: "A sleek movie catalog connected to a NestJS microservice with Prisma. It displays 10 movies per page with poster backgrounds and detailed info cards, plus dynamic controls for browsing and selection.",
         images: [
-            "./assets/images/Cinema.webp"
+            "./assets/images/Cinema.webp",
+            "./assets/images/Cin1.webp",
+            "./assets/images/Cin2.webp",
+            "./assets/images/Cin3.webp",
+            "./assets/images/Cin4.webp"
         ],
         technologies: [
             "HTML",
@@ -107,6 +111,7 @@ const projectData = {
             "JavaScript",
             "TypeScript",
             "Node.js",
+            "NestJS",
             "Prisma"
         ],
         github: {
@@ -116,7 +121,7 @@ const projectData = {
     },
     tourism: {
         title: "TOURISM",
-        description: "",
+        description: "A vintage-themed web app that predicts city names from uploaded photos using a Keras model hosted in Docker. The system displays the prediction and confidence with smooth UI and alert handling.",
         images: [
             "./assets/images/Turismo.webp"
         ],
@@ -126,15 +131,15 @@ const projectData = {
             "JavaScript",
             "SweetAlert",
             "API",
+            "Docker",
             "Python",
-            "Numpy",
             "Keras"
         ],
         github: "https://github.com/NinYuri/Turismo_ML.git"
     },
     cafendi: {
         title: "CAFENDI",
-        description: "",
+        description: "A warm and elegant homepage concept for a specialty in coffee shop. The layout blends soft cream tones and browns, accented with coffee beans and vintage typography. It highlights product categories, a featured frappe, the shop's story, chef intro, and customer reviews.",
         images: [
             "./assets/images/Cafendi.webp",
             "./assets/images/Cafendi1.webp",
@@ -149,7 +154,7 @@ const projectData = {
     },
     swim: {
         title: "OGREN",
-        description: "",
+        description: "A homepage and about us concept for a swimming school, designed in soft blues with playful bubble accents. It highlights programs, facilities, team, events and reviews, using rounded visuals and outlined typography for a clean, lighthearted feel.",
         images: [
             "./assets/images/Natacion.webp",
             "./assets/images/Swim1.webp",
@@ -166,7 +171,7 @@ const projectData = {
     },
     accounting: {
         title: "ACCOUNTING",
-        description: "",
+        description: "A design concept for an accounting web platform to manage clients, properties, and legal documents. Built with an earthy green and mustard palette, the interface guides users through structured forms for mutual credit contracts.",
         images: [
             "./assets/images/Contador.webp",
             "./assets/images/Cont1.webp",
@@ -179,22 +184,20 @@ const projectData = {
     },
     tanks: {
         title: "TANK BATTLE",
-        description: "",
-        images: [
-
-        ],
+        description: "A 2D two-player tank battle set in a lunar base. Each player controls a tank using opposite sides of the keyboard, aiming and firing with distinct directional guides. After five shots, a powerful special attack becomes available. The camera dynamically adjusts to keep both players in view, ensuring a competitive and immersive experience.",
+        video: "./assets/images/Tanks.mp4",
         technologies: [
             "Unity",
-            "C"
+            "C#"
         ]
     },
     galaga: {
         title: "GALAGA",
-        description: "A fast-paced arcade-style shooter inspired by Galaga, where players must match their ship's color to falling stars. Hitting the wrong color — or missing any star — ends the game. Includes dynamic color changes and a switchable 3D perspective view for added challenge and depth.",
-        video: "",
+        description: "An arcade-style shooter inspired by Galaga, where players must match their ship's color to falling stars. Hitting the wrong color — or missing any star — ends the game. Includes dynamic color changes and a switchable 3D perspective view for added challenge and depth.",
+        video: "./assets/images/Galaga.mp4",
         technologies: [
             "Unity",
-            "C"
+            "C#"
         ]
     },
     solfran: {
@@ -492,14 +495,22 @@ function fillModalContent(project) {
     const techContainer = document.querySelector('.modal-content .technologies');
     techContainer.innerHTML = '';
 
+    // Safe names
+    const techMap = {
+        "Node.js": "Nodejs",
+        "C#": "CSharp"
+    };
+
     project.technologies.forEach(tech => {
         const btn = document.createElement('button');
         btn.classList.add('tech');
 
+        const safeTech = techMap[tech] || tech;
+
         const img = document.createElement('img');
-        img.src = `./assets/images/${tech}.webp`;
+        img.src = `./assets/images/${safeTech}.webp`;
         img.alt = tech;
-        img.classList.add(tech.toLowerCase());
+        img.classList.add(safeTech.toLowerCase());
 
         btn.appendChild(img);
         btn.append(tech);

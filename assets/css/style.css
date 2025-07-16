@@ -259,8 +259,9 @@ body {
     width: 16%; 
 }
 
-.technologies .tech img[class="node.js"] { width: 19%; }
+.technologies .tech .nodejs { width: 19%; }
 
+.technologies .tech .nestjs,
 .technologies .tech .python,
 .technologies .tech .numpy,
 .technologies .tech .docker { width: 21%; }
@@ -303,7 +304,7 @@ body {
     left: 0.5em;
 }
 
-.technologies .tech .c { width: 31%; }
+.technologies .tech .csharp { width: 29%; }
 
 .technologies .tech .mysql {
     height: 72%;
@@ -679,6 +680,9 @@ header {
     margin-right: 0.7em;
 }
 
+/* ================== FOOTER ================== */
+
+
 /* ================== RESPONSIVE ================== */
 
 @media (max-width: 880px) {
@@ -753,6 +757,7 @@ header {
     .home-design { 
         width: 100%; 
         align-items: center;
+        margin: auto;
     }
 
     .home-design .home-name { 
@@ -773,6 +778,39 @@ header {
         height: 3em;
         font-size: 0.9rem;
     }
+
+    /* ================== PROJECTS ================== */
+    .description {
+        width: 100%;
+        padding: 0 1.5em;
+    }
+
+    .description h1 { font-size: 2.5rem; }
+
+    .description p { font-size: 0.8rem; }
+
+    .options-container { 
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .options-container .option { font-size: 0.9rem; }
+
+    .projects-container.active { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
+
+    .project:hover .border { inset: 1em; }
+
+    .project .content-project { 
+        width: calc(100% - 3em);
+        height: calc(100% - 3em);
+        text-align: center;
+    }
+
+    .project-title h5 { font-size: 1.1rem; }
+
+    .project-title p { font-size: 0.8em; }
 }
 
 @media (min-width: 1024px) and (max-width: 1365px) {
@@ -794,6 +832,7 @@ header {
     .home-design .home-info { 
         display: flex;
         text-align: center;
+        padding: 2.3em 1.5em;
     }
 }
 
@@ -823,7 +862,7 @@ header {
 
     .navbar-container { padding: 0 5rem; }
 
-    .navbar-container .navbar-menu li a { font-size: 1.3rem; }
+    .navbar-container .navbar-menu li a { font-size: 1.5rem; }
 
     /* ================== HEADER ================== */
     .home-design .home-name h1 { font-size: 17rem; }
