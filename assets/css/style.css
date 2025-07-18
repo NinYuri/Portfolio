@@ -252,6 +252,7 @@ body {
 
 .technologies .tech .css { width: 27%; }
 
+.technologies .tech .netbeans,
 .technologies .tech .javascript,
 .technologies .tech .typescript { 
     top: 0.25em;
@@ -309,6 +310,12 @@ body {
 .technologies .tech .mysql {
     height: 72%;
     top: 0.33em;
+}
+
+.technologies .tech .lexer {
+    top: 0.4em;
+    height: 58%;
+    width: 22%;
 }
 
 /* ================== NAVBAR ================== */

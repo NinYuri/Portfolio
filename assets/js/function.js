@@ -201,55 +201,78 @@ const projectData = {
         ]
     },
     solfran: {
-        title: "",
-        description: "",
-        images: [
-
+        title: "SOLFRAN MANAGER",
+        description: "A java desktop app built in NetBeans for Solfrán Labs. It features role-based access, real-time CRUD operations and a MySQL database connection. The interface uses magenta and blue tones for clarity and structure, with a clean side menu and modules like User Management and Inventory.",
+        images: [            
+            "./assets/images/Solf1.webp",
+            "./assets/images/Solf2.webp",
+            "./assets/images/Solf3.webp",
+            "./assets/images/Solf4.webp",
+            "./assets/images/Solf5.webp",
+            "./assets/images/Solf6.webp",
+            "./assets/images/Solf7.webp",
+            "./assets/images/Solf8.webp"
         ],
         technologies: [
             "Java",
             "MySQL",
-            "Git"
+            "Git",
+            "NetBeans"
         ],
         github: "https://github.com/NinYuri/Lab_Solfran.git"
     },
     netbeans: {
-        title: "",
-        description: "",
+        title: "STAY FASHION",
+        description: "A pastel-themed beauty appointment system built with Java and MySQL. Users can register, browse services like nails and makeup, and schedule multiple appointments. Booking details are saved directly to the database after choosing the date and payment method.",
         images: [
-
+            "./assets/images/Fashion.webp",
+            "./assets/images/Fas1.webp",
+            "./assets/images/Fas2.webp",
+            "./assets/images/Fas3.webp",
+            "./assets/images/Fas4.webp",
+            "./assets/images/Fas5.webp",
+            "./assets/images/Fas6.webp",
+            "./assets/images/Fas7.webp",
         ],
         technologies: [
             "Java",
             "MySQL",
-            "Git"
+            "Git",
+            "NetBeans"
         ],
         github: "https://github.com/NinYuri/TopicProject.git"
     },
-    compLR: {
-        title: "",
-        description: "",
+    compLL: {
+        title: "LL COMPILER",
+        description: "A custom LL compiler with a dark-themed UI. Includes buttons like New, Save, Open, and Compile. The Compile function runs lexical (with Lexer) and syntactic analysis. Errors — if any — are shown below with their type, line number, and explanation.",
         images: [
-
+            "./assets/images/LL1.webp",
+            "./assets/images/LL2.webp",
+            "./assets/images/LL3.webp"
         ],
         technologies: [
+            "NetBeans",
             "Java",
             "ExcelJS",
-            "Lex"
+            "Lexer"
         ],
         github: "https://github.com/NinYuri/Compilador.git"
     },
-    compLL: {
-        title: "",
-        description: "",
+    compLR: {
+        title: "LR COMPILER",
+        description: "An improved LR compiler with a sleeker dark-gray UI. Includes all basic functions plus “Save As” and a new pane for intermediate code in C, generated from the user’s input. This code runs correctly in standard C compilers online.",
         images: [
-
+            "./assets/images/LR1.webp",
+            "./assets/images/CompiladorLR.webp",
+            "./assets/images/LR3.webp"
         ],
         technologies: [
+            "NetBeans",
             "Java",
-            "ExcelJS"
+            "ExcelJS",
+            "Lexer"
         ],
-        github: ""
+        github: "https://github.com/NinYuri/Compilador_LR.git"
     }
 };
 
