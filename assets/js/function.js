@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     projectDemo();
     enableTouchProjects();
     projectResponsive();
+    adjustProjectButtons();
 });
 
 
@@ -480,6 +481,15 @@ function projectDemo() {
             if(project && project.demo)
                 window.open(project.demo, '_blank');
         });
+    });
+}
+
+// RESPONSIVE
+function adjustProjectButtons() {
+    document.querySelectorAll('.project-buttons').forEach(container => {
+        const buttons = container.querySelectorAll('button');
+        if(buttons.length > 2)
+            container.classList.add('wrap-3');
     });
 }
 

@@ -659,9 +659,15 @@ header {
     margin-bottom: 3em;
 }
 
-.project-buttons { z-index: 3; }
+.project-buttons { 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    z-index: 3; 
+}
 
-.project-buttons .project-option {
+.project-buttons .project-option {    
     color: var(--black);
     font-family: var(--spaceMono);
     font-size: 1rem;
@@ -761,6 +767,9 @@ header {
 }
 
 @media (max-width: 480px) {
+    /* ================== MODAL ================== */
+    .modal-container { width: 95%; }
+
     /* ================== NAVBAR ================== */
     .navbar-container { padding: 0 1rem; }
 
@@ -810,7 +819,7 @@ header {
 
     .description h1 { font-size: 2.5rem; }
 
-    .description p { font-size: 0.8rem; }
+    .description p { font-size: 0.7rem; }
 
     .options-container { 
         display: grid;
@@ -821,7 +830,7 @@ header {
 
     .options-container .option { font-size: 0.9rem; }
 
-    .projects-container.active { grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); }
+    .projects-container.active { grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); }
 
     .project:hover .border { inset: 1em; }
 
@@ -831,9 +840,15 @@ header {
         text-align: center;
     }
 
-    .project-title h5 { font-size: 1.1rem; }
+    .project-title h5 { 
+        font-size: 1.1rem;
+        letter-spacing: 0.5em; 
+    }
 
-    .project-title p { font-size: 0.8em; }
+    .project-title p { 
+        font-size: 0.7em;
+        letter-spacing: 0.5em;
+    }
 
     .project-touched .border {
         inset: 2rem;
@@ -847,6 +862,17 @@ header {
     }
 
     .project-touched .content-project { transform: scale(1); }
+
+    .project-buttons.wrap-3 { 
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        transform: translateY(-0.4em);
+    }
+
+    .project-buttons.wrap-3 .about { grid-column: 1 / -1; }
+
+    .project-buttons .project-option { font-size: 0.8rem; }
 }
 
 @media (min-width: 1024px) and (max-width: 1365px) {
@@ -967,10 +993,7 @@ header {
 
     .project-title p { font-size: 1.6rem; }
 
-    .project-buttons {
-        display: flex;
-        gap: 1.5em;
-    }
+    .project-buttons { gap: 1.5em; }
 
     .project-buttons .project-option { 
         font-size: 1.6rem; 
