@@ -757,10 +757,7 @@ header {
 
     .home-design .home-name h3 { font-size: 4rem; }
 
-    .home-design .home-info p { font-size: 0.9rem; }
-
-    /* ================== PROJECTS ================== */
-    
+    .home-design .home-info p { font-size: 0.9rem; }    
 }
 
 @media (max-width: 480px) {
@@ -837,6 +834,19 @@ header {
     .project-title h5 { font-size: 1.1rem; }
 
     .project-title p { font-size: 0.8em; }
+
+    .project-touched .border {
+        inset: 2rem;
+        opacity: 1;
+        transform: rotate(0);
+    }
+
+    .project-touched img {
+        filter: blur(4px) brightness(0.5);
+        transform: scale(1.05);
+    }
+
+    .project-touched .content-project { transform: scale(1); }
 }
 
 @media (min-width: 1024px) and (max-width: 1365px) {

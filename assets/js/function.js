@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     projectAbout();
     projectGithub();
     projectDemo();
+    enableTouchProjects();
+    projectResponsive();
 });
 
 
@@ -386,6 +388,24 @@ function projectOptions() {
             if(target) target.classList.add('active');
         });
     });
+}
+
+/* ================================ PROJECTS ================================ */
+// RESPONSIVE
+function projectResponsive() {
+    document.querySelectorAll('.touch-project').forEach(project => {
+        project.addEventListener('click', () => {
+            project.classList.toggle('touched');
+        });
+    });
+}
+
+function enableTouchProjects() {
+    if(window.innerWidth <= 1200) {
+        document.querySelectorAll('.project').forEach(project => {
+            project.classList.add('touch-project');
+        });
+    }
 }
 
 /* ================================ PROJECT BUTTONS ================================ */
