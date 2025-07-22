@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     projectAbout();
     projectGithub();
     projectDemo();
+    awards();
     enableTouchProjects();
     projectResponsive();
     adjustProjectButtons();
@@ -491,6 +492,23 @@ function adjustProjectButtons() {
         if(buttons.length > 2)
             container.classList.add('wrap-3');
     });
+}
+
+/* ========================= EXPERIENCE BUTTONS ========================= */
+// DOLPHIN STAY
+function awards() {
+    const stay = document.querySelector('.button.stay');
+    const congress = document.querySelector('.button.congress');
+
+    stay.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://drive.google.com/file/d/1XMjfK2Fqe3oRKHFFTp3dtFiaYu2Pw4iu/view?usp=sharing', '_blank');
+    });
+
+    congress.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://drive.google.com/file/d/1zF4WjrY0XHnfjvlHu8brsuMvkTYXpGYn/view?usp=sharing', '_blank');
+    })
 }
 
 /* ================================ FILL MODAL ================================ */

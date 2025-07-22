@@ -693,6 +693,94 @@ header {
     margin-right: 0.7em;
 }
 
+/* ================== EXPERIENCE ================== */
+.experience { 
+    border-top: 2px solid var(--vintageWine); 
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.description.exp { margin-bottom: 2em; }
+
+.exp-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.exp-section:not(:last-child) { margin-bottom: 3rem; }
+
+.exp-left,
+.exp-right {
+    width: 50%;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.exp-left { 
+    padding: 1em;
+    align-items: center; 
+}
+
+.exp-right {
+    padding-right: 6em;
+    font-size: 1rem;
+    color: var(--mochaEarth);
+    align-items: center;
+}
+
+.exp-right.second { padding: 0 0 0 6em; }
+
+.exp-title {
+    background-color: var(--vanCream);
+    color: var(--vintageWine);
+    font-weight: bold;    
+    padding: 0.2em 1.5em;
+    transform: rotate(-5deg) translateY(2em);
+    text-align: center;
+}
+
+.exp-title.left { transform: rotate(5deg) translateY(1.5em); }
+
+.exp-title h5 {
+    font-family: var(--pinyon);
+    font-size: 2rem;
+}
+
+.exp-title p {
+    font-family: var(--crimson);
+    font-size: 0.8rem;
+    color: var(--mochaEarth);
+}
+
+.exp-left img {
+    width: 55%;
+    height: 27em;
+}
+
+.exp-left .dolphin { width: 70%; }
+
+.exp-right h2 { 
+    color: var(--vintageWine); 
+    text-align: center;
+}
+
+.exp-right p { text-align: justify; }
+
+.button.stay,
+.button.congress {
+    width: 13em;
+    height: 2.5em;
+    margin: 2.5em 0 0 0;
+    border: 1.5px solid var(--mochaEarth);
+    font-size: 1rem;
+}
+
 /* ================== FOOTER ================== */
 .footer {
     width: 100%;
