@@ -539,12 +539,14 @@ header {
 /* ======================= SKILLS ======================= */
 .skills-container {
     width: 90%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5em;
 }
 
 .skill-card {
+    flex: 0 1 24em;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -919,7 +921,11 @@ header {
 
 @media (max-width: 480px) {
     /* ================== MODAL ================== */
-    .modal-container { width: 95%; }
+    .modal-container { 
+        width: 95%; 
+        height: auto;
+        overflow: auto;
+    }
 
     /* ================== NAVBAR ================== */
     .navbar-container { padding: 0 1rem; }
@@ -970,7 +976,7 @@ header {
 
     .description h1 { font-size: 2.5rem; }
 
-    .description p { font-size: 0.7rem; }
+    .description p { font-size: 0.8rem; }
 
     .options-container { 
         display: grid;
@@ -1055,7 +1061,7 @@ header {
 
     .exp-right h2 { font-size: 1.3rem; }
 
-    .exp-right p { font-size: 0.7em; }
+    .exp-right p { font-size: 0.8em; }
 
     .button.stay { font-size: 0.9rem; }
 }
