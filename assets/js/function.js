@@ -569,7 +569,8 @@ function fillModalContent(project) {
     // Safe names
     const techMap = {
         "Node.js": "Nodejs",
-        "C#": "CSharp"
+        "C#": "CSharp",
+        "NetBeans": "Netbeans"
     };
 
     project.technologies.forEach(tech => {

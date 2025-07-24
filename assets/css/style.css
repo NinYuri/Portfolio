@@ -48,6 +48,16 @@ body {
 ::-webkit-scrollbar-thumb { background-color: var(--vintageWine); }
 
 /* ================== REUSABLE ================== */
+.section {
+    width: 100%;
+    background-color: var(--jetStream);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .button {
     position: relative;
     width: 11em;
@@ -96,6 +106,7 @@ body {
     opacity: 1;
     transform: scale(1.5) rotate(5deg);
 }
+
 
 /* ================== MODAL ================== */
 .modal {
@@ -233,6 +244,7 @@ body {
     position: relative;
     font-size: 0.9rem;
     font-weight: 600;
+    color: var(--black);
     border-radius: 20px;
     background-color: var(--vanillaCreamHover);
     border: 1px solid var(--mochaEarth);
@@ -317,6 +329,7 @@ body {
     height: 58%;
     width: 22%;
 }
+
 
 /* ================== NAVBAR ================== */
 .navbar {
@@ -472,6 +485,7 @@ body {
     transition: all  0.3s ease-in-out;
 }
 
+
 /* ================== HEADER ================== */
 header {
     background-color: var(--vintageWine);
@@ -519,26 +533,53 @@ header {
 
 
 /* ================== ABOUT ME ================== */
-.aboutMe {
-    width: 100%;
-    height: 100vh;
-    background-color: var(--jetStream);
-    overflow: hidden;
-    border-bottom: var(--vintageWine) 2px solid;
+.section.aboutMe { border-bottom: var(--vintageWine) 2px solid; }
+
+
+/* ======================= SKILLS ======================= */
+.skills-container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    gap: 1.5em;
 }
 
-
-/* ================== PROJECTS ================== */
-.projects {
-    width: 100%;
-    background-color: var(--jetStream);
-    overflow: hidden;
+.skill-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    background-color: var(--vanillaCream);
+    color: var(--mochaEarth);
+    padding: 1.5em;
+    overflow: hidden;
+    z-index: 1;
 }
 
+.skill-card::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 92%;
+    height: 90%;
+    border: 3px solid var(--vanCream);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.skill-card h2 {
+    font-size: 2rem;
+    color: var(--vintageWine);
+    margin-bottom: 0.5em;
+}
+
+.skill-card ul { margin-bottom: 1em; }
+
+/* ================== PROJECTS ================== */
 .description {
     width: 70%;
     display: flex;
@@ -693,16 +734,9 @@ header {
     margin-right: 0.7em;
 }
 
+
 /* ================== EXPERIENCE ================== */
-.experience { 
-    border-top: 2px solid var(--vintageWine); 
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+.experience { border-top: 2px solid var(--vintageWine); }
 
 .description.exp { margin-bottom: 2em; }
 
@@ -781,6 +815,7 @@ header {
     font-size: 1rem;
 }
 
+
 /* ================== FOOTER ================== */
 .footer {
     width: 100%;
@@ -852,6 +887,34 @@ header {
     .home-design .home-name h3 { font-size: 4rem; }
 
     .home-design .home-info p { font-size: 0.9rem; }    
+
+    /* ================== EXPERIENCE ================== */
+    .description.exp { margin-bottom: 1.8em; }
+
+    .exp-section:not(:last-child) { margin-bottom: 1em; }
+
+    .exp-section.reverse { flex-direction: column-reverse; }
+
+    .exp-left,
+    .exp-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .exp-left .dolphin { width: 80%; }
+
+    .exp-left img { height: 30em; }
+
+    .exp-title h5 { font-size: 2.2rem; }
+
+    .exp-title p { font-size: 0.9rem; }
+
+    .exp-right.second,
+    .exp-right { padding: 3.5em; }
+
+    .exp-right p { font-size: 1em; }
+
+    .button.stay { font-size: 1.1rem; }
 }
 
 @media (max-width: 480px) {
@@ -961,6 +1024,40 @@ header {
     .project-buttons.wrap-3 .about { grid-column: 1 / -1; }
 
     .project-buttons .project-option { font-size: 0.8rem; }
+
+    /* ================== EXPERIENCE ================== */
+    .description.exp { margin-bottom: 1.2em; }
+
+    .exp-section:not(:last-child) { margin-bottom: 1em; }
+
+    .exp-section.reverse { flex-direction: column-reverse; }
+
+    .exp-left,
+    .exp-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .exp-left .dolphin { width: 80%; }
+
+    .exp-left img { height: 15em; }
+
+    .exp-title { transform: rotate(-5deg) translateY(1em); }
+
+    .exp-title.left { transform: rotate(5deg) translateY(1em); }
+
+    .exp-title h5 { font-size: 1.6rem; }
+
+    .exp-title p { font-size: 0.6rem; }
+
+    .exp-right.second,
+    .exp-right { padding: 2em; }
+
+    .exp-right h2 { font-size: 1.3rem; }
+
+    .exp-right p { font-size: 0.7em; }
+
+    .button.stay { font-size: 0.9rem; }
 }
 
 @media (min-width: 1024px) and (max-width: 1365px) {
