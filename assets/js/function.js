@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollSpy();
     navButtons();
     navScroll();
+    contactModal();
     projectsBtn();
+    animateSquares();
     projectOptions();
     projectAbout();
     projectGithub();
@@ -350,6 +352,26 @@ function navScroll() {
     });
 }
 
+// CONTACT MODAL
+function contactModal() {
+    const btnContact = document.querySelector('.button.button-contact');
+    const modal = document.querySelector('.contact-modal');
+    const btnModal = modal.querySelector('label[for="btn-modal"]');
+
+    btnContact.addEventListener('click', () => {
+        modal.classList.add('active');
+    });
+
+    btnModal.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+        if(e.target === modal)
+            modal.classList.remove('active');
+    });
+}
+
 /* ===================================== HOME ===================================== */
 function projectsBtn() {
     const seeProjects = document.querySelector('.button.view-projects');
@@ -362,6 +384,34 @@ function projectsBtn() {
             behavior: 'smooth'
         });
     });
+}
+
+/* ================================== SCROLL SEPARATOR ================================== */
+function animateSquares() {
+    const bottomSections = document.querySelectorAll(".bottom-section");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                const section = entry.target;
+                const leftSquares = section.querySelector(".left-squares");
+                const rightSquares = section.querySelector(".right-squares");
+
+                if (entry.isIntersecting) {
+                    leftSquares?.classList.remove("scroll");
+                    rightSquares?.classList.remove("scroll");
+                } else {
+                    leftSquares?.classList.add("scroll");
+                    rightSquares?.classList.add("scroll");
+                }
+            });
+        },
+        {
+            threshold: 0.9, // Activa cuando el 90% del elemento es visible
+        }
+    );
+
+    bottomSections.forEach((section) => observer.observe(section));
 }
 
 /* ================================ PROJECTS OPTIONS ================================ */

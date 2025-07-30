@@ -4,12 +4,13 @@
     /* ====== COLORS ====== */
     --vintageWine: #3F1521;
     --jetStream: #EAE3DB;
-    --mochaEarth: #493e3c;
+    --mochaEarth: #493E3C;
     --vanillaCream: rgba(212, 192, 149, 0.3);
     --vanillaCreamHover: rgba(212, 192, 149, 0.6);
     --vanCream: #D4C095;
-    --darkVanilla: #c5b28e;
+    --darkVanilla: #C5B28E;
     --black: #000000;
+    --logo: #CFCDCD;
 
     /* ====== FONTS ====== */
     --monsieur: 'Monsieur La Doulaise', cursive;
@@ -56,7 +57,55 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2em;
 }
+
+.bottom-section {
+    position: relative;
+    width: 100%;
+    height: 7em;
+    margin-top: 3em;
+    background-color: var(--jetStream);
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.bottom-section .left-squares,
+.bottom-section .right-squares {
+    display: grid;
+    grid-template-columns: repeat(3, 8em);
+}
+
+.bottom-section .right-squares { justify-content: end; }
+
+.left-squares,
+.right-squares { transform: translateY(-2.5em); }
+
+.left-squares .square,
+.right-squares .square {
+    width: 4em;
+    height: 4em;
+    background-color: var(--vintageWine);
+    transition: transform 0.5s ease-out;
+    will-change: transfom;
+}
+
+.left-squares.scroll .square:nth-child(odd),
+.right-squares.scroll .square:nth-child(even) { transform: translateY(-1.5em); }
+
+.left-squares.scroll .square:nth-child(even),
+.right-squares.scroll .square:nth-child(odd) { transform: translateY(1.5em); }
+
+.left-squares .square:nth-child(6n+4),
+.left-squares .square:nth-child(6n+5),
+.left-squares .square:nth-child(6n+6) { transform: translateX(4em); }
+
+.right-squares .square:nth-child(6n+1),
+.right-squares .square:nth-child(6n+2),
+.right-squares .square:nth-child(6n+3) { transform: translateX(4em); }
 
 .button {
     position: relative;
@@ -133,7 +182,7 @@ body {
 .modal-container {
     position: relative;
     width: 40%;
-    height: 87%;
+    height: auto;
     margin: auto;
     background-color: var(--jetStream);
     box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
@@ -220,7 +269,7 @@ body {
 
 .modal-content { 
     color: var(--vintageWine); 
-    padding: 0 2em 0.5em 2em;
+    padding: 0 2em 1em 2em;
 }
 
 .modal-content h3 { font-size: 2rem; }
@@ -331,6 +380,103 @@ body {
 }
 
 
+/* ================== CONTACT MODAL ================== */
+.contact-modal {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.contact-modal.active {
+    visibility: visible; 
+    opacity: 1;
+}
+
+.modal-container.contact-container { 
+    position: relative;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--vintageWine);
+    padding: 1em;
+}
+
+.modal-container.contact-container::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 98.7%;
+    height: 93%;
+    border: 3px solid var(--vintageWine);
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.modal-container.contact-container label {
+    top: 0.25em;
+    right: 0.55em;
+}
+
+.contact-text {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.4em;
+}
+
+.contact-text h2 {
+    color: var(--vintageWine);
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+}
+
+.contact-text p {
+    color: var(--mochaEarth);
+    font-size: 1.1rem;
+}
+
+.contact-text p:last-child { margin-bottom: 2em; }
+
+.contact-network {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+.contact-card {
+    flex: 0 1 18em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--vanillaCream);
+    color: var(--mochaEarth);
+    padding: 1.5em;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
 /* ================== NAVBAR ================== */
 .navbar {
     display: flex;
@@ -376,12 +522,11 @@ body {
 .navbar-container .navbar-menu {
     display: flex;
     text-align: center;
+    align-items: center;
     gap: 1.2rem;   
 }
 
 .navbar-container .navbar-menu.active { background: var(--vintageWine); }
-
-.navbar-container .navbar-menu .contact { position: relative; }
 
 .navbar-container .navbar-menu li a {
     position: relative;
@@ -393,15 +538,6 @@ body {
     overflow: hidden;
 }
 
-.navbar-container .navbar-menu .contact a {    
-    color: var(--black);
-    font-weight: 700;
-    border-radius: 20px;
-    background-color: var(--vanCream);
-    border: 2px solid var(--mochaEarth);
-    padding: 6px 20px;
-}
-
 .navbar-container .navbar-menu li a::after,
 .navbar-container .navbar-menu li a::before {
     content: '';
@@ -410,32 +546,6 @@ body {
     background-color: var(--vanCream);
     width: 0%;
     transition: all 0.4s ease;
-}
-
-.navbar-container .navbar-menu .contact a::before,
-.navbar-container .navbar-menu .contact a::after { 
-    content: '';
-    position: absolute;
-    opacity: 0;
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    background-image: url('../images/Stars.webp');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: all 1s ease;
-    pointer-events: none; 
-}
-
-.navbar-container .navbar-menu .contact a::before {
-    top: -10px;
-    left: -10px;
-}
-
-.navbar-container .navbar-menu .contact a::after {
-    bottom: -10px;
-    right: -10px;
 }
 
 .navbar-container .navbar-menu li a::before { 
@@ -460,13 +570,6 @@ body {
     width: 50%;
 }
 
-.navbar-container .navbar-menu .contact a:hover::before,
-.navbar-container .navbar-menu .contact a:hover::after {
-    width: 20px;
-    opacity: 1;
-    transform: scale(1.5) rotate(5deg);
-}
-
 .navbar-toggle {
     display: none;
     background: transparent;
@@ -483,6 +586,18 @@ body {
     background: var(--jetStream);
     border-radius: 10px;
     transition: all  0.3s ease-in-out;
+}
+
+.button.button-contact {
+    width: auto;
+    height: auto;
+    margin-bottom: 0;
+    color: var(--black);
+    font-weight: 700;
+    border-radius: 20px;
+    background-color: var(--vanCream);
+    border: 2px solid var(--mochaEarth);
+    padding: 6px 20px;
 }
 
 
@@ -527,13 +642,12 @@ header {
     margin: -1.3em 0 0 3em;
 }
 
-.home-design .home-info { padding: 2.3em 0; }
+.home-design .home-info { padding: 2.3em 1em 2.3em 0; }
 
 .home-design .home-info p { font-size: 1.1rem; }
 
 
 /* ================== ABOUT ME ================== */
-.section.aboutMe { border-bottom: var(--vintageWine) 2px solid; }
 
 
 /* ======================= SKILLS ======================= */
@@ -789,8 +903,6 @@ header {
 
 
 /* ================== EXPERIENCE ================== */
-.experience { border-top: 2px solid var(--vintageWine); }
-
 .description.exp { margin-bottom: 2em; }
 
 .exp-section {
@@ -872,9 +984,11 @@ header {
 /* ================== FOOTER ================== */
 .footer {
     width: 100%;
-    background-color: var(--vintageWine);
-    height: 100px;
+    height: 70px;
+    display: flex;
+    background-color: var(--vintageWine);    
     overflow: hidden;
+    padding: 0.3em 1.5em;
 }
 
 .footer-icon { 
@@ -883,10 +997,27 @@ header {
     align-items: center;
 }
 
-.footer-icon img {
-    height: 70%;
-    transform: translateX(1em);
+.footer-icon img { height: 70%; }
+
+.footer-text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--logo);
+    margin-left: auto;
 }
+
+.footer-text h1 { 
+    font-size: 1.5rem; 
+    font-family: var(--pinyon);
+}
+
+.footer-text span { 
+    font-family: var(--monsieur); 
+}
+
+.footer-text p { font-size: 0.9rem; }
 
 
 /* ================== RESPONSIVE ================== */
