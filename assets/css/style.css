@@ -1050,6 +1050,65 @@ header {
 /* ================== RESPONSIVE ================== */
 
 @media (max-width: 880px) {
+    /* ================== REUSABLE ================== */
+    .left-squares .square:nth-child(6n+1),
+    .left-squares .square:nth-child(6n+2),
+    .left-squares .square:nth-child(6n+3) { transform: translateX(-5em); }
+
+    .left-squares .square:nth-child(6n+4),
+    .left-squares .square:nth-child(6n+5),
+    .left-squares .square:nth-child(6n+6) { transform: translateX(-1em); }
+
+    .right-squares .square:nth-child(6n+1),
+    .right-squares .square:nth-child(6n+2),
+    .right-squares .square:nth-child(6n+3) { transform: translateX(9em); }
+
+    .right-squares .square:nth-child(6n+4),
+    .right-squares .square:nth-child(6n+5),
+    .right-squares .square:nth-child(6n+6) { transform: translateX(5em); }
+
+    /* ================== CONTACT MODAL ================== */
+    .modal-container.contact-container { width: 95%; }
+
+    .modal-container.contact-container::after { 
+        width: 98%;
+        height: 98%; 
+    }
+
+    .modal-container.contact-container label { 
+        top: 0.27em;
+        right: 0.7em; 
+    }
+
+    .contact-text { 
+        text-align: center;
+        padding: 0.4em;
+    }
+
+    .contact-text h2 { font-size: 2rem; }
+
+    .contact-text p { font-size: 1.1rem; }
+
+    .contact-text p:last-child { margin-bottom: 2.2em; }
+
+    .contact-network { gap: 1.5em; }
+
+    .contact-card { padding: 1em 2em; }
+
+    .contact-card ion-icon { font-size: 2.7rem; }
+
+    .card-text h2 { font-size: 1.3rem; }
+
+    .card-text a,
+    .card-text p {
+        margin-top: 1em;
+        font-size: 1rem;
+    }
+
+    .card-text br { display: none; }
+
+    .contact-socials { margin: 2em 0 0 0; }
+
     /* ================== MODAL ================== */
     .modal-container { 
         width: 60%; 
@@ -1120,6 +1179,8 @@ header {
 
     /* ================== SKILLS ================== */
     .skill-card { flex: 0 1 20em; }
+
+    .skill-card li { font-size: 1.1rem; }
 
     /* ================== EXPERIENCE ================== */
     .description.exp { margin-bottom: 1.8em; }
@@ -1206,6 +1267,48 @@ header {
 
     .left-squares.scroll .square:nth-child(even),
     .right-squares.scroll .square:nth-child(odd) { transform: translateY(0); }
+
+    /* ================== CONTACT MODAL ================== */
+    .modal-container.contact-container { width: 95%; }
+
+    .modal-container.contact-container::after { 
+        width: 98%;
+        height: 99%; 
+    }
+
+    .modal-container.contact-container label { 
+        top: 0.25em;
+        right: 0.5em; 
+    }
+
+    .contact-text { 
+        text-align: center;
+        padding: 0.4em;
+    }
+
+    .contact-text h2 { font-size: 1.8rem; }
+
+    .contact-text p { font-size: 1em; }
+
+    .contact-text p:last-child { margin-bottom: 2em; }
+
+    .contact-network { gap: 1em; }
+
+    .contact-card { padding: 1em 2em; }
+
+    .contact-card ion-icon { font-size: 2.5rem; }
+
+    .card-text h2 { font-size: 1.3rem; }
+
+    .card-text a,
+    .card-text p {
+        margin-top: 1em;
+        font-size: 1rem;
+    }
+
+    .card-text br { display: none; }
+
+    .contact-socials { margin: 1.5em 0 0 0; }
 
     /* ================== MODAL ================== */
     .modal-container { 
@@ -1454,10 +1557,31 @@ header {
 
 @media (min-width: 1920px) {
     /* ================== REUSABLE ================== */
+    .bottom-section { margin-top: 4em; }
+
     .button { font-size: 1.5rem; }
 
+    /* ================== CONTACT MODAL ================== */
+    .contact-card { 
+        flex: 0 1 20em;
+        padding: 1.5em 2em;
+    }
+
+    .contact-text h2 { font-size: 3rem; }
+
+    .contact-text p { font-size: 1.5rem; }
+
+    .card-text h2 { font-size: 2rem; }
+
+    .card-text a,
+    .card-text p { font-size: 1.4rem; }
+
+    .contact-socials { margin: 4em 0 0.6em 0; }
+
+    .contact-socials ion-icon { font-size: 3.5em; }
+
     /* ================== MODAL ================== */
-    .modal-container { width: 37%; }
+    .modal-container { width: 40%; }
 
     .modal-container label { font-size: 2.5rem; }
 
@@ -1471,10 +1595,12 @@ header {
         height: 0.6em;
     }
 
+    .modal-content { padding: 0 2em 2em 2em; }
+
     .modal-content h3 { font-size: 3rem; }
     
     .modal-content p { 
-        font-size: 1.3rem; 
+        font-size: 1.5rem; 
         margin-bottom: 2.5em;
     }
 
@@ -1495,6 +1621,8 @@ header {
 
     .navbar-container { padding: 0 5rem; }
 
+    .navbar-container .navbar-menu { gap: 1.7em; }
+
     .navbar-container .navbar-menu li a { font-size: 1.5rem; }
 
     /* ================== HEADER ================== */
@@ -1508,6 +1636,16 @@ header {
     .home-design .home-info { padding-right: 2em; }
 
     .home-design .home-info p { font-size: 1.5rem; }
+
+    /* ================== SKILLS ================== */
+    .skills-container { gap: 2em; }
+
+    .skill-card { 
+        flex: 0 1 30em; 
+        padding: 2em 1.5em;
+    }
+
+    .skill-card li { font-size: 1.5rem; }
 
     /* ================== PROJECTS ================== */
     .description { width: 80%; }
@@ -1538,4 +1676,27 @@ header {
         font-size: 1.6rem; 
         padding: 10px 30px;
     }
+
+    /* ================== EXPERIENCE ================== */
+    .exp-title h5 { font-size: 2.5rem; }
+
+    .exp-title p { font-size: 1rem; }
+
+    .exp-right h2 { font-size: 2em; }
+
+    .exp-right p,
+    .button.stay,
+    .button.congress { font-size: 1.5rem; }
+
+    .button.stay,
+    .button.congress { margin-top: 3em; }
+
+    .exp-section:not(:last-child) { margin-bottom: 4.5em; }
+
+    .exp-left img { height: 35em; }
+
+    /* ================== FOOTER ================== */
+    .footer { height: 110px; }
+
+    .footer-text p { font-size: 1.3rem; }
 }
