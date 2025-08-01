@@ -476,9 +476,10 @@ body {
     z-index: 1;
 }
 
-.contact-card ion-icon { font-size: 3.5em; }
+.card-text,
+.card-icon { width: 100%; }
 
-.card-text { width: 100%; }
+.card-text ion-icon { font-size: 3.5em; }
 
 .card-text a,
 .card-text p {
@@ -1294,11 +1295,18 @@ header {
 
     .contact-network { gap: 1em; }
 
-    .contact-card { padding: 1em 2em; }
+    .contact-card { padding: 0.7em 2em; }
 
-    .contact-card ion-icon { font-size: 2.5rem; }
+    .card-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4em;
+    }
 
-    .card-text h2 { font-size: 1.3rem; }
+    .card-icon ion-icon { font-size: 2rem; }
+
+    .card-icon h2 { font-size: 1.3rem; }    
 
     .card-text a,
     .card-text p {
@@ -1318,6 +1326,12 @@ header {
     }
 
     .modal-content { padding: 0 1em 1.5em 1em; }
+
+    .modal-content h3 { font-size: 1.8rem; }
+
+    .modal-content p { font-size: 0.9rem; }
+
+    .technologies .tech { font-size: 0.8rem; }
 
     /* ================== NAVBAR ================== */
     .navbar-container { padding: 0 1rem; }
