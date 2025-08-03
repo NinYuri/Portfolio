@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    /*const loaderContainer = document.querySelector('.loader-container');
+    const loaderContainer = document.querySelector('.loader-container');
     const images = document.querySelectorAll('img');
     const videos = document.querySelectorAll('video');
 
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ...projectPromises
     ]).then(() => {
         loaderContainer.classList.add("loader-container--hidden");
-    });*/
+    });
     
     scrollSpy();
     navButtons();
