@@ -21,38 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     })
 
-    // PROJECT DATA
-    const projectPromises = [];
-    Object.values(projectData).forEach(project => {
-        if(project.images) {
-            project.images.forEach(src => {
-                const img = new Image();
-                img.src = src;
-                projectPromises.push(
-                    new Promise(resolve => {
-                        img.onload = resolve;
-                        img.onerror = resolve;
-                    })
-                );
-            });
-        }
-        if(project.video) {
-            const video = document.createElement('video');
-            video.src = project.video;
-            projectPromises.push(
-                new Promise(resolve => {
-                    video.oncanplaythrough = resolve;
-                    video.onerror = resolve;
-                })
-            );
-        }
-    });
-
     Promise.all([
         new Promise(resolve => window.addEventListener('load', resolve)),
         ...imagePromises,
-        ...videoPromises,
-        ...projectPromises
+        ...videoPromises
     ]).then(() => {
         loaderContainer.classList.add("loader-container--hidden");
     });
@@ -640,7 +612,11 @@ function fillModalContent(project) {
         video.autoplay = true;
         video.loop = true;
         video.muted = true;
+        video.playsInline = true;
+        video.setAttribute('webkit-playsinline', '');
         video.style.width = "100%";
+        video.loading = "lazy";
+        video.preload = "auto";
 
         imgContainer.appendChild(video);
     } else {
@@ -654,6 +630,7 @@ function fillModalContent(project) {
             img.src = src;
             img.alt = project.title;
             img.id = `slide${index + 1}`;
+            img.loading = "lazy";
             imgContainer.appendChild(img);
 
             // Dots
