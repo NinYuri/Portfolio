@@ -1,4 +1,62 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
+    /*const loaderContainer = document.querySelector('.loader-container');
+    const images = document.querySelectorAll('img');
+    const videos = document.querySelectorAll('video');
+
+    // IMAGES
+    const imagePromises = Array.from(images).map(img => {
+        if(img.complete) return Promise.resolve();
+        return new Promise(resolve => {
+            img.addEventListener('load', resolve);
+            img.addEventListener('error', resolve);
+        });
+    });
+
+    // VIDEOS
+    const videoPromises = Array.from(videos).map(video => {
+        if(video.readyState >= 3) return Promise.resolve();   // 3 = HAVE FUTURE DATA
+        return new Promise(resolve => {
+            video.addEventListener('canplaythrough', resolve);
+            video.addEventListener('error', resolve);
+        });
+    })
+
+    // PROJECT DATA
+    const projectPromises = [];
+    Object.values(projectData).forEach(project => {
+        if(project.images) {
+            project.images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+                projectPromises.push(
+                    new Promise(resolve => {
+                        img.onload = resolve;
+                        img.onerror = resolve;
+                    })
+                );
+            });
+        }
+        if(project.video) {
+            const video = document.createElement('video');
+            video.src = project.video;
+            projectPromises.push(
+                new Promise(resolve => {
+                    video.oncanplaythrough = resolve;
+                    video.onerror = resolve;
+                })
+            );
+        }
+    });
+
+    Promise.all([
+        new Promise(resolve => window.addEventListener('load', resolve)),
+        ...imagePromises,
+        ...videoPromises,
+        ...projectPromises
+    ]).then(() => {
+        loaderContainer.classList.add("loader-container--hidden");
+    });*/
+    
     scrollSpy();
     navButtons();
     navScroll();

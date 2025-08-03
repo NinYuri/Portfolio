@@ -157,6 +157,86 @@ body {
 }
 
 
+/* ================== LOADER ================== */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--vanCream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.loader-container--hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader {
+    width: 20em;
+    height: 20em;
+}
+
+.loader path {
+    stroke: var(--vintageWine);
+    stroke-width: 0.6px;
+    animation: 
+        dashArray 4s ease-in-out infinite, 
+        dashOffset 4s linear infinite;
+}
+
+.loader-text {
+    display: flex;
+    font-size: 4rem;
+    -webkit-text-stroke: 0.15rem var(--vintageWine);
+    color: transparent;
+    font-family: var(--spaceMono);
+    margin-top: 0.4em;
+}
+
+.letter { 
+    position: relative; 
+    animation: fillText 2s ease-in-out infinite;
+}
+
+.letter:nth-child(1) { animation-delay: 0s; }
+.letter:nth-child(2) { animation-delay: 0.2s; }
+.letter:nth-child(3) { animation-delay: 0.4s; }
+.letter:nth-child(4) { animation-delay: 0.6s; }
+.letter:nth-child(5) { animation-delay: 0.8s; }
+.letter:nth-child(6) { animation-delay: 1s; }
+.letter:nth-child(7) { animation-delay: 1.2s; }
+
+@keyframes dashArray {
+    0% { stroke-dasharray: 0 1 359 0; }
+
+    50% { stroke-dasharray: 0 359 1 0; }
+
+    100% { stroke-dasharray: 369 1 0 0; }
+}
+
+@keyframes dashOffset {
+    0% { stroke-dashoffset: 365; }
+
+    100% { stroke-dashoffset: 5; }
+}
+
+@keyframes fillText {
+    0% { color: transparent; }
+
+    50% { color: var(--vintageWine); }
+
+    100% { color: transparent; }
+}
+
+
 /* ================== MODAL ================== */
 .modal {
     width: 100%;
