@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     projectGithub();
     projectDemo();
     awards();
+    certifications();
     enableTouchProjects();
     projectResponsive();
     adjustProjectButtons();
@@ -308,6 +309,7 @@ const projectData = {
     }
 };
 
+
 /* ================================ SCROLLSPY ================================ */
 function scrollSpy() {
     const sections = document.querySelectorAll('section[id]');
@@ -333,6 +335,7 @@ function scrollSpy() {
 
     window.addEventListener('scroll', activateMenuOnScroll);
 }
+
 
 /* ================================ NAVBAR ================================ */
 // BUTTONS
@@ -378,22 +381,25 @@ function navButtons() {
         if(!navbarMenu.contains(e.target) && !navbarToggle.contains(e.target))
             closeMenu();
     });
-
-    /* SCROLL */
-    window.addEventListener('scroll', () => {
-        closeMenu();
-    });
 }
 
 // SCROLL
 function navScroll() {
     let lastScrollY = window.scrollY;
+
     const navbar = document.querySelector('.navbar');
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const navbarMenu = document.querySelector('.navbar-menu');
 
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
 
-        if(currentScrollY > lastScrollY) 
+        navbarToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+
+        if(currentScrollY <= 80) 
+            navbar.classList.remove('hide');
+        else if(currentScrollY > lastScrollY) 
             navbar.classList.add('hide');
         else
             navbar.classList.remove('hide');
@@ -422,6 +428,7 @@ function contactModal() {
     });
 }
 
+
 /* ===================================== HOME ===================================== */
 function projectsBtn() {
     const seeProjects = document.querySelector('.button.view-projects');
@@ -435,6 +442,7 @@ function projectsBtn() {
         });
     });
 }
+
 
 /* ================================== SCROLL SEPARATOR ================================== */
 function animateSquares() {
@@ -464,6 +472,7 @@ function animateSquares() {
     bottomSections.forEach((section) => observer.observe(section));
 }
 
+
 /* ================================ PROJECTS OPTIONS ================================ */
 function projectOptions() {
     const projects = document.querySelectorAll('.options-container .option');
@@ -492,6 +501,7 @@ function projectOptions() {
     });
 }
 
+
 /* ================================ PROJECTS ================================ */
 // RESPONSIVE
 function projectResponsive() {
@@ -509,6 +519,7 @@ function enableTouchProjects() {
         });
     }
 }
+
 
 /* ================================ PROJECT BUTTONS ================================ */
 // ABOUT
@@ -594,6 +605,7 @@ function adjustProjectButtons() {
     });
 }
 
+
 /* ========================= EXPERIENCE BUTTONS ========================= */
 function awards() {
     const psa = document.querySelector('.button.psa');
@@ -627,6 +639,42 @@ function awards() {
         window.open('https://drive.google.com/file/d/1zF4WjrY0XHnfjvlHu8brsuMvkTYXpGYn/view?usp=sharing', '_blank');
     })
 }
+
+
+/* ========================= CERTIFICATIONS BUTTONS ========================= */
+function certifications() {
+    const english = document.querySelector('.button.stay.english');
+    const github = document.querySelector('.button.stay.github');
+    const scrum = document.querySelector('.button.stay.scrum');
+    const python = document.querySelector('.button.stay.python');
+    const html = document.querySelector('.button.stay.html');
+
+    english.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://drive.google.com/file/d/1DRGcy_NIwxzHQa3Fm49JLp-jYBkmbIJx/view?usp=sharing');
+    });
+
+    github.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://drive.google.com/file/d/12mHSVEo41yN2i-Si7uevBLbMEyDFT2Jf/view?usp=sharing');
+    });
+
+    scrum.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://drive.google.com/file/d/1nf-dkL4ikSMpZpaC_Es8NZvfTdXO5qYu/view?usp=sharing');
+    });
+
+    python.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://drive.google.com/file/d/1zeEKOM5pjswG9JcXY6QkUSGESelhevCK/view?usp=sharing');
+    });
+
+    html.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://drive.google.com/file/d/1ro0TWeG9b8iDcwIcttsF8sQrMZ1Aue2Z/view?usp=sharing');
+    });
+}
+
 
 /* ================================ FILL MODAL ================================ */
 function fillModalContent(project) {
@@ -715,6 +763,7 @@ function fillModalContent(project) {
     if(!project.video)
         modalSlider();
 }
+
 
 /* ========================= MODAL SLIDER ========================= */
 function modalSlider() {

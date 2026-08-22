@@ -111,7 +111,7 @@ body {
 
 .button {
     position: relative;
-    width: 11em;
+    width: auto;
     height: 3em;
     color: var(--black);
     font-family: var(--spaceMono);
@@ -1216,6 +1216,14 @@ header {
 .button.biblio i { margin-right: 0.5em; }
 
 
+/* ================== CERTIFICATIONS ================== */
+.do-card.cert { flex: 0 1 23em; }
+
+.do-card.cert p { margin-top: 0.5em; }
+
+.do-card.cert button { margin-bottom: 1.5em; }
+
+
 /* ================== FOOTER ================== */
 .footer {
     width: 100%;
@@ -1805,7 +1813,10 @@ header {
 
     .exp-right.second { padding-left: 4em; }
 
-    .button.stay { font-size: 1.1rem; }
+    .button.stay,
+    .button.congress,
+    .button.psa,
+    .button.biblio { font-size: 1.1rem; }
 }
 
 @media (min-width: 1366px) {
