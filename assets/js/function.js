@@ -48,9 +48,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* ================================ PROJECT OBJECTS ================================ */
 const projectData = {
+    posecoach: {
+        title: "POSECOACH",
+        description: "A full-stack fitness platform featuring an exercise catalog connected through a Django REST API to provide content for a companion mobile app. It integrates OTP verification via SendGrid for email and Vonage for phone numbers.",
+        images: [
+            "./assets/images/PoseCoach.webp",
+            "./assets/images/PC1.webp",
+            "./assets/images/PC2.webp",
+            "./assets/images/PC3.webp",
+            "./assets/images/PC4.webp",
+            "./assets/images/PC5.webp"
+        ],
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Python",
+            "Django",
+            "Cloudinary",
+            "SweetAlert",
+            "SendGrid",
+            "Vonage",
+            "Google Cloud"
+        ],
+        github: {
+            frontend: "https://github.com/NinYuri/PoseCoachWeb.git",
+            backend: "https://github.com/NinYuri/PoseCoachExercises.git"
+        }
+    },
     prenacional: {
         title: "PRENATIONAL",
-        description: "An informative and user-friendly web platform designed to centralize details for the Prenational Sports Event hosted by the Instituto Tecnológico de Jiquilpan — including teams, venues, schedules, and results.",
+        description: "A web platform designed to centralize information for the Prenational Sports Event hosted by the Instituto Tecnológico de Jiquilpan, providing access to teams, venues, schedules and results in one place.",
         images: [
             "./assets/images/Prenacional.webp",
             "./assets/images/Pre1.webp",
@@ -72,29 +100,9 @@ const projectData = {
         ],
         github: "https://github.com/NinYuri/Proyecto_Prenacional.git"
     },
-    bibliopass: {
-        title: "BIBLIOPASS",
-        description: "A web-based platform that automates library check-ins by scanning student QR codes, scraping data from Mindbox, and instantly recording their academic data, date, time and service consulted in an Excel report.",
-        images: [
-            "./assets/images/QR1.webp",
-            "./assets/images/QR.webp"            
-        ],
-        technologies: [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "Node.js",
-            "Puppeteer",
-            "ExcelJS"
-        ],
-        github: {
-            frontend: "https://github.com/NinYuri/QR_Project.git",
-            backend: "https://github.com/NinYuri/QR_ProjectNode.git"
-        }
-    },
     casamia: {
         title: "CASA MIA",
-        description: "A refined and responsive restaurant website concept with a sleek, sophisticated design. It includes sections like Home, Menu, About Us, Contact, and Table Reservation — all wrapped in a dark palette with gold accents to evoke a luxurious and welcoming dining atmosphere.",
+        description: "A responsive restaurant website concept featuring sections for Home, Menu, About Us, Contact and Table Reservation. Its dark color palette with gold accents creates an elegant visual identity while keeping the experience clear and easy to navigate.",
         images: [
             "./assets/images/Restaurant.webp",
             "./assets/images/CM1.webp",
@@ -111,29 +119,9 @@ const projectData = {
         github: "https://github.com/NinYuri/Restaurante_web.git",
         demo: "https://ninyuri.github.io/Restaurante_web/"
     },
-    stayfashion: {
-        title: "STAY FASHION",
-        description: "A static website designed for an elegant beauty studio, using warm colors and pastel pinks over a clean white base. It includes sections like Home, About Us, Services and Login — highlighting the salon's philosophy, stylists, and a visual catalog of treatments.",
-        images: [
-            "./assets/images/Stay_Fashion.webp",
-            "./assets/images/SF1.webp",
-            "./assets/images/SF2.webp",
-            "./assets/images/SF3.webp",
-            "./assets/images/SF4.webp",
-            "./assets/images/SF5.webp"
-        ],
-        technologies: [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "SweetAlert"
-        ],
-        github: "https://github.com/NinYuri/StayFashion.git",
-        demo: "https://ninyuri.github.io/StayFashion/"
-    },
     cinema: {
         title: "CINEMA",
-        description: "A sleek movie catalog connected to a NestJS microservice with Prisma. It displays 10 movies per page with poster backgrounds and detailed info cards, plus dynamic controls for browsing and selection.",
+        description: "A movie catalog platform connected to a NestJS microservice with Prisma. It displays movies in a paginated interface with poster backgrounds, detailed information cards and dynamic controls for browsing and selection.",
         images: [
             "./assets/images/Cinema.webp",
             "./assets/images/Cin1.webp",
@@ -157,7 +145,7 @@ const projectData = {
     },
     tourism: {
         title: "TOURISM",
-        description: "A vintage-themed web app that predicts city names from uploaded photos using a Keras model hosted in Docker. The system displays the prediction and confidence with smooth UI and alert handling.",
+        description: "A web application that predicts city names from uploaded images using a Keras image recognition model deployed with Docker. It processes each image through an API and displays the predicted city along with the model's confidence score.",
         images: [
             "./assets/images/Turismo.webp"
         ],
@@ -165,17 +153,35 @@ const projectData = {
             "HTML",
             "CSS",
             "JavaScript",
-            "SweetAlert",
-            "API",
-            "Docker",
             "Python",
-            "Keras"
+            "Keras",
+            "Docker"
         ],
         github: "https://github.com/NinYuri/Turismo_ML.git"
     },
+    stayfashion: {
+        title: "STAY FASHION",
+        description: "My first web development project, created as an introduction to building interfaces with HTML, CSS and JavaScript. A static beauty studio website featuring sections for Home, About Us, Services and Login, with a visual catalog of stylists and treatments.",
+        images: [
+            "./assets/images/Stay_Fashion.webp",
+            "./assets/images/SF1.webp",
+            "./assets/images/SF2.webp",
+            "./assets/images/SF3.webp",
+            "./assets/images/SF4.webp",
+            "./assets/images/SF5.webp"
+        ],
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "SweetAlert"
+        ],
+        github: "https://github.com/NinYuri/StayFashion.git",
+        demo: "https://ninyuri.github.io/StayFashion/"
+    },
     cafendi: {
         title: "CAFENDI",
-        description: "A warm and elegant homepage concept for a specialty in coffee shop. The layout blends soft cream tones and browns, accented with coffee beans and vintage typography. It highlights product categories, a featured frappe, the shop's story, chef intro, and customer reviews.",
+        description: "A warm and elegant homepage concept for a specialty coffee shop, designed around a clear visual hierarchy and inviting brand identity. The interface brings together product categories, featured drinks, the shop's story, team introduction and customer reviews through a cohesive browsing experience.",
         images: [
             "./assets/images/Cafendi.webp",
             "./assets/images/Cafendi1.webp",
@@ -183,14 +189,12 @@ const projectData = {
             "./assets/images/Cafendi3.webp",
             "./assets/images/Cafendi4.webp"
         ],
-        technologies: [
-            "Figma"
-        ],
+        technologies: [ "Figma" ],
         github: "https://www.figma.com/proto/2x54qr0EZsmKqRczeUL8fF/Coffe-Shop?node-id=1066-2&starting-point-node-id=1066%3A2&scaling=scale-down-width&content-scaling=fixed&t=fg8e3HHhptMGCcQu-1"
     },
     swim: {
         title: "OGREN",
-        description: "A homepage and about us concept for a swimming school, designed in soft blues with playful bubble accents. It highlights programs, facilities, team, events and reviews, using rounded visuals and outlined typography for a clean, lighthearted feel.",
+        description: "A playful homepage concept for a swimming school, designed to present its programs, facilities, team, events and reviews through a clear and approachable experience. The interface combines friendly visual elements with an organized layout to create an engaging identity for students and families.",
         images: [
             "./assets/images/Natacion.webp",
             "./assets/images/Swim1.webp",
@@ -200,14 +204,12 @@ const projectData = {
             "./assets/images/Swim5.webp",
             "./assets/images/Swim6.webp"
         ],
-        technologies: [
-            "Figma"
-        ],
+        technologies: [ "Figma" ],
         github: "https://www.figma.com/proto/xWQSHQs4Bxhi0p8MRLMSDM/Escuela-de-Nataci%C3%B3n?node-id=12-27&starting-point-node-id=12%3A27&scaling=scale-down-width&content-scaling=fixed&t=z4t97BerVPPv9Sfw-1"
     },
     accounting: {
         title: "ACCOUNTING",
-        description: "A design concept for an accounting web platform to manage clients, properties, and legal documents. Built with an earthy green and mustard palette, the interface guides users through structured forms for mutual credit contracts.",
+        description: "A web platform concept designed to manage clients, properties and legal documentation through structured workflows. The interface organizes complex information into clear, guided forms for creating and managing mutual credit contracts.",
         images: [
             "./assets/images/Contador.webp",
             "./assets/images/Cont1.webp",
@@ -220,7 +222,7 @@ const projectData = {
     },
     tanks: {
         title: "TANK BATTLE",
-        description: "A 2D two-player tank battle set in a lunar base. Each player controls a tank using opposite sides of the keyboard, aiming and firing with distinct directional guides. After five shots, a powerful special attack becomes available. The camera dynamically adjusts to keep both players in view, ensuring a competitive and immersive experience.",
+        description: "A 2D two-player tank battle set on a lunar base, featuring aiming and shooting mechanics, unlockable special attacks and a dynamic camera that keeps both players in view throughout the match.",
         video: "./assets/images/Tanks.mp4",
         technologies: [
             "Unity",
@@ -229,7 +231,7 @@ const projectData = {
     },
     galaga: {
         title: "GALAGA",
-        description: "An arcade-style shooter inspired by Galaga, where players must match their ship's color to falling stars. Hitting the wrong color — or missing any star — ends the game. Includes dynamic color changes and a switchable 3D perspective view for added challenge and depth.",
+        description: "An arcade-style shooter inspired by Galaga, combining classic shooting mechanics with a color-matching challenge. Players must adapt their ship's color to incoming stars while navigating dynamic color changes and a switchable 3D perspective.",
         video: "./assets/images/Galaga.mp4",
         technologies: [
             "Unity",
@@ -238,7 +240,7 @@ const projectData = {
     },
     solfran: {
         title: "SOLFRAN MANAGER",
-        description: "A java desktop app built in NetBeans for Solfrán Labs. It features role-based access, real-time CRUD operations and a MySQL database connection. The interface uses magenta and blue tones for clarity and structure, with a clean side menu and modules like User Management and Inventory.",
+        description: "A Java desktop management system developed for Solfrán Labs, featuring role-based access, CRUD operations and MySQL database integration. It includes dedicated modules for managing users, inventory and other core laboratory operations.",
         images: [            
             "./assets/images/Solf1.webp",
             "./assets/images/Solf2.webp",
@@ -252,14 +254,13 @@ const projectData = {
         technologies: [
             "Java",
             "MySQL",
-            "Git",
             "NetBeans"
         ],
         github: "https://github.com/NinYuri/Lab_Solfran.git"
     },
     netbeans: {
         title: "STAY FASHION",
-        description: "A pastel-themed beauty appointment system built with Java and MySQL. Users can register, browse services like nails and makeup, and schedule multiple appointments. Booking details are saved directly to the database after choosing the date and payment method.",
+        description: "A Java desktop appointment system for a beauty studio, allowing users to register, browse available services and schedule multiple appointments. Booking details, including selected dates and payment methods, are stored and managed through a MySQL database.",
         images: [
             "./assets/images/Fashion.webp",
             "./assets/images/Fas1.webp",
@@ -273,14 +274,13 @@ const projectData = {
         technologies: [
             "Java",
             "MySQL",
-            "Git",
             "NetBeans"
         ],
         github: "https://github.com/NinYuri/TopicProject.git"
     },
     compLL: {
         title: "LL COMPILER",
-        description: "A custom LL compiler with a dark-themed UI. Includes buttons like New, Save, Open, and Compile. The Compile function runs lexical (with Lexer) and syntactic analysis. Errors — if any — are shown below with their type, line number, and explanation.",
+        description: "A Java-based LL compiler with an integrated code editor that performs lexical and syntactic analysis. It identifies compilation errors and provides detailed feedback, including the error type, line number and description.",
         images: [
             "./assets/images/LL1.webp",
             "./assets/images/LL2.webp",
@@ -288,15 +288,13 @@ const projectData = {
         ],
         technologies: [
             "NetBeans",
-            "Java",
-            "ExcelJS",
-            "Lexer"
+            "Java"
         ],
         github: "https://github.com/NinYuri/Compilador.git"
     },
     compLR: {
         title: "LR COMPILER",
-        description: "An improved LR compiler with a sleeker dark-gray UI. Includes all basic functions plus “Save As” and a new pane for intermediate code in C, generated from the user’s input. This code runs correctly in standard C compilers online.",
+        description: "A Java-based LR compiler that analyzes source code and generates intermediate C code from the user's input. The generated output can be executed in standard C compilers.",
         images: [
             "./assets/images/LR1.webp",
             "./assets/images/CompiladorLR.webp",
@@ -304,9 +302,7 @@ const projectData = {
         ],
         technologies: [
             "NetBeans",
-            "Java",
-            "ExcelJS",
-            "Lexer"
+            "Java"
         ],
         github: "https://github.com/NinYuri/Compilador_LR.git"
     }
@@ -345,14 +341,27 @@ function navButtons() {
     const navbarMenu = document.querySelector('.navbar-menu');
     const navElements = document.querySelectorAll('.navbar-menu li a');
 
-    navbarToggle.addEventListener('click', () => {
+    /* CLOSE MENU */
+    const closeMenu = () => {
+        navbarToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+    }
+
+    /* TOGGLE MENU */
+    navbarToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+
         navbarToggle.classList.toggle('active');
         navbarMenu.classList.toggle('active');
     });
 
+    /* NAV LINKS */
     navElements.forEach(link => {
         link.addEventListener('click', () => {
-            // No hacer nada si es el botón de Contact
+            // Cerrar al seleccionar opción
+            closeMenu();
+            
+            // No hacer nada si es Contact
             if(link.parentElement.classList.contains('contact')) return;
 
             navElements.forEach(el => {
@@ -362,6 +371,17 @@ function navButtons() {
 
             link.classList.add('active');
         });
+    });
+
+    /* CLICK OUTSIDE */
+    document.addEventListener('click', (e) => {
+        if(!navbarMenu.contains(e.target) && !navbarToggle.contains(e.target))
+            closeMenu();
+    });
+
+    /* SCROLL */
+    window.addEventListener('scroll', () => {
+        closeMenu();
     });
 }
 
@@ -462,10 +482,10 @@ function projectOptions() {
             });
 
             let target;
-            if(option === 'web pages') target = document.querySelector('.projects-container.web');
-            if(option === 'web designs') target = document.querySelector('.projects-container.design');
+            if(option === 'web development') target = document.querySelector('.projects-container.web');
+            if(option === 'ui/ux design') target = document.querySelector('.projects-container.design');
             if(option === 'unity games') target = document.querySelector('.projects-container.unity');
-            if(option === 'java apps') target = document.querySelector('.projects-container.java');
+            if(option === 'java projects') target = document.querySelector('.projects-container.java');
 
             if(target) target.classList.add('active');
         });
@@ -575,10 +595,27 @@ function adjustProjectButtons() {
 }
 
 /* ========================= EXPERIENCE BUTTONS ========================= */
-// DOLPHIN STAY
 function awards() {
+    const psa = document.querySelector('.button.psa');
+    const biblioFront = document.querySelector('.button.biblio.front');
+    const biblioBack = document.querySelector('.button.biblio.back');
     const stay = document.querySelector('.button.stay');
     const congress = document.querySelector('.button.congress');
+
+    psa.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://drive.google.com/file/d/17np6jTZG5yyPyfRHjwkgjudIDAYv58Fq/view?usp=sharing', '_blank');
+    });
+
+    biblioFront.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://github.com/NinYuri/QR_Project.git');
+    });
+
+    biblioBack.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://github.com/NinYuri/QR_ProjectNode.git');
+    });
 
     stay.addEventListener('click', (e) => {
         e.preventDefault();
@@ -655,7 +692,8 @@ function fillModalContent(project) {
     const techMap = {
         "Node.js": "Nodejs",
         "C#": "CSharp",
-        "NetBeans": "Netbeans"
+        "NetBeans": "Netbeans",
+        "Google Cloud": "GoogleCloud"
     };
 
     project.technologies.forEach(tech => {

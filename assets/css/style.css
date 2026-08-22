@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Monsieur+La+Doulaise&family=Pinyon+Script&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 :root {
     /* ====== COLORS ====== */
     --vintageWine: #3F1521;
@@ -17,6 +17,7 @@
     --crimson: 'Crimson Text', serif;
     --pinyon: 'Pinyon Script', cursive;
     --spaceMono: 'Space Mono', monospace;
+    --italianno: 'Italianno', cursive;
 }
 
 html { scroll-behavior: smooth; }
@@ -47,6 +48,7 @@ body {
 ::-webkit-scrollbar-track { background-color: transparent; }
 
 ::-webkit-scrollbar-thumb { background-color: var(--vintageWine); }
+
 
 /* ================== REUSABLE ================== */
 .section {
@@ -403,10 +405,16 @@ body {
 
 .technologies .tech .nodejs { width: 19%; }
 
+.technologies .tech .sendgrid { width: 18%; }
+
+.technologies .tech .googlecloud { width: 16%; }
+
 .technologies .tech .nestjs,
 .technologies .tech .python,
 .technologies .tech .numpy,
-.technologies .tech .docker { width: 21%; }
+.technologies .tech .docker,
+.technologies .tech .django,
+.technologies .tech .chartjs { width: 21%; }
 
 .technologies .tech .postgresql { 
     left: 0.4em;
@@ -419,22 +427,30 @@ body {
     width: 17%;
 }
 
-.technologies .tech .sweetalert {
+.technologies .tech .sweetalert,
+.technologies .tech .banxico {
     width: 17%;
-    height: 73%;
+    height: 72%;
     top: 0.27em;
     left: 0.5em;
 }
 
-.technologies .tech .exceljs { 
+.technologies .tech .exceljs,
+.technologies .tech .vonage { 
     top: 0.28em;
     left: 0.5em;
     width: 20%; 
     height: 67%;
 }
 
-.technologies .tech .git,
-.technologies .tech .api { 
+.technologies .tech .cloudinary {
+    top: 0.35em;
+    left: 0.5em;
+    width: 17%; 
+    height: 57%;
+}
+
+.technologies .tech .git { 
     width: 28%; 
     height: 73%;
     top: 0.27em;
@@ -453,12 +469,12 @@ body {
     top: 0.33em;
 }
 
-.technologies .tech .lexer {
-    top: 0.4em;
-    height: 58%;
-    width: 22%;
+.technologies .tech .entraid {
+    top: 0.3em;
+    left: 0.6em;
+    width: 10%;
+    height: 62%;
 }
-
 
 /* ================== CONTACT MODAL ================== */
 .contact-modal {
@@ -574,7 +590,7 @@ body {
 
 .card-text a:hover { color: var(--vintageWine); }
 
-.contact-socials { margin: 3em 0 0.6em 0; }
+.contact-socials { margin: 3em 0 0.6em 0; }   
 
 .contact-socials ion-icon {
     color: var(--mochaEarth);
@@ -583,6 +599,8 @@ body {
 }
 
 .contact-socials ion-icon:hover { color: var(--vintageWine); }
+
+.contact-socials ion-icon:first-child { margin-right: 0.3em; }
 
 
 /* ================== NAVBAR ================== */
@@ -752,6 +770,21 @@ header {
 
 .home-design .home-info { padding: 2.3em 1em 2.3em 0; }
 
+.home-design .home-info span {
+    display: inline-block; 
+    background-color: var(--darkVanilla);
+    color: var(--black);
+    font-weight: bold;
+    padding: 0.3em 1.3em;
+    
+    clip-path: polygon(
+        10px 0,
+        100% 0,
+        calc(100% - 10px) 100%,
+        0 100%
+    );
+}
+
 .home-design .home-info p { font-size: 1.1rem; }
 
 
@@ -786,7 +819,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.3em;
+    gap: 2em;
 }
 
 .do-card {
@@ -880,7 +913,7 @@ header {
     position: absolute;
     background-color: var(--vintageWine);
     box-shadow: 0 0 5px var(--vintageWine);
-    border-radius: 100px;
+    border-radius: 50%;
     z-index: 2;
     animation: moveDot 15s linear infinite;
 }
@@ -933,6 +966,7 @@ header {
 
 .skill-card ul { margin-bottom: 1em; }
 
+
 /* ================== PROJECTS ================== */
 .description {
     width: 70%;
@@ -955,7 +989,7 @@ header {
 }
 
 .options-container .option {
-    width: 9.8em;
+    width: auto;
     height: 3em;
     color: var(--black);
     font-family: var(--spaceMono);
@@ -1090,7 +1124,7 @@ header {
 
 
 /* ================== EXPERIENCE ================== */
-.description.exp { margin-bottom: 2em; }
+.description.exp { margin-bottom: 5em; }
 
 .exp-section {
     width: 100%;
@@ -1134,7 +1168,7 @@ header {
 .exp-title.left { transform: rotate(5deg) translateY(1.5em); }
 
 .exp-title h5 {
-    font-family: var(--pinyon);
+    font-family: var(--italianno);
     font-size: 2rem;
 }
 
@@ -1149,6 +1183,11 @@ header {
     height: 27em;
 }
 
+.exp-left .exp-project {
+    width: 85%;
+    height: 23em;
+}
+
 .exp-left .dolphin { width: 70%; }
 
 .exp-right h2 { 
@@ -1158,14 +1197,23 @@ header {
 
 .exp-right p { text-align: justify; }
 
+.buttons-exp {
+    display: flex;
+    gap: 1.5em;
+}
+
 .button.stay,
-.button.congress {
-    width: 13em;
+.button.congress,
+.button.psa,
+.button.biblio {
+    width: auto;
     height: 2.5em;
     margin: 2.5em 0 0 0;
     border: 1.5px solid var(--mochaEarth);
     font-size: 1rem;
 }
+
+.button.biblio i { margin-right: 0.5em; }
 
 
 /* ================== FOOTER ================== */
@@ -1271,7 +1319,7 @@ header {
 
     /* ================== MODAL ================== */
     .modal-container { 
-        width: 60%; 
+        width: 70%; 
         height: auto; 
     }
 
@@ -1285,14 +1333,14 @@ header {
     .navbar-container .navbar-menu {
         display: none;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 2.3rem !important;
         position: absolute;
         height: 100vh;
         width: 250px;
         top: 0;
         right: 0;
-        padding: 5rem 1.5rem;
+        padding: 10rem 1.5rem;
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
@@ -1322,6 +1370,7 @@ header {
         width: 100%;
         margin-top: 0; 
         align-items: center;
+        text-align: center;
     }
 
     .home-design .home-name { 
@@ -1336,6 +1385,9 @@ header {
     .home-design .home-info p { font-size: 1rem; }    
 
     .button { font-size: 1.2rem; }
+
+    /* ================== ABOUT ME ================== */
+    .about-content { text-align: center; }
 
     /* ================== SKILLS ================== */
     .skill-card { flex: 0 1 20em; }
@@ -1368,7 +1420,15 @@ header {
 
     .exp-right p { font-size: 1.1em; }
 
-    .button.stay { font-size: 1.2rem; }
+    .technologies.exp { 
+        margin-top: 1.5em;
+        font-size: 0.9em; 
+    }
+
+    .button.stay,
+    .button.congress,
+    .button.psa,
+    .button.biblio { font-size: 1.2rem; }
 
     /* ================== FOOTER ================== */
     .footer {
@@ -1444,6 +1504,7 @@ header {
     .contact-text { 
         text-align: center;
         padding: 0.4em;
+        margin-top: 1em;
     }
 
     .contact-text h2 { font-size: 1.8rem; }
@@ -1475,7 +1536,7 @@ header {
 
     .card-text br { display: none; }
 
-    .contact-socials { margin: 1.5em 0 0 0; }
+    .contact-socials { margin: 2.5em 0 0 0; }
 
     /* ================== MODAL ================== */
     .modal-container { 
@@ -1539,7 +1600,7 @@ header {
     .about-content { 
         font-size: 0.9rem; 
         padding: 0 0.5em;
-        text-align: justify;
+        text-align: center;
     }
 
     .about-do h2 { font-size: 1.9rem; }
@@ -1662,7 +1723,20 @@ header {
 
     .exp-right p { font-size: 0.9em; }
 
-    .button.stay { font-size: 1rem; }
+    .exp-left .exp-project {
+        width: 90%;
+        height: 13em;
+    }
+
+    .technologies.exp { 
+        justify-content: center;
+        font-size: 0.7em; 
+    }
+
+    .button.stay,
+    .button.congress,
+    .button.psa,
+    .button.biblio { font-size: 0.9rem; }
 
     /* ================== FOOTER ================== */
     .footer {
@@ -1755,6 +1829,12 @@ header {
 
     .button { font-size: 1.5rem; }
 
+    .button:hover::before,
+    .button:hover::after {
+        width: 27px;
+        height: 27px;
+    }
+
     /* ================== CONTACT MODAL ================== */
     .contact-card { 
         flex: 0 1 20em;
@@ -1775,7 +1855,7 @@ header {
     .contact-socials ion-icon { font-size: 3.5em; }
 
     /* ================== MODAL ================== */
-    .modal-container { width: 40%; }
+    .modal-container { width: 43%; }
 
     .modal-container label { font-size: 2.5rem; }
 
@@ -1804,7 +1884,7 @@ header {
     }
 
     .technologies .tech { 
-        font-size: 1rem; 
+        font-size: 1.1rem; 
         padding: 6px 20px 6px 40px;
     }
 
@@ -1836,7 +1916,7 @@ header {
 
     .about-do h2 { font-size: 3.5rem; }
 
-    .about-cards { gap: 2em; }
+    .about-cards { gap: 2.5em; }
 
     .do-card {
         flex: 0 1 25em;
@@ -1899,14 +1979,23 @@ header {
 
     .exp-right p,
     .button.stay,
-    .button.congress { font-size: 1.5rem; }
+    .button.congress,
+    .button.psa,
+    .button.biblio { font-size: 1.5rem; }
 
     .button.stay,
-    .button.congress { margin-top: 3em; }
+    .button.congress,
+    .button.psa,
+    .button.biblio { margin-top: 3em; }
 
     .exp-section:not(:last-child) { margin-bottom: 4.5em; }
 
-    .exp-left img { height: 35em; }
+    .exp-left img { 
+        height: 35em; 
+        width: 57%;
+    }
+
+    .exp-left .exp-project { height: 30em; }
 
     /* ================== FOOTER ================== */
     .footer { height: 110px; }
